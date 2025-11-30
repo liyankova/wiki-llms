@@ -1,0 +1,117 @@
+---
+url: https://docs.noctalia.dev/development/guideline/
+title: Guideline | Noctalia Docs
+source_domain: docs.noctalia.dev
+---
+
+# Guideline | Noctalia Docs
+
+# Guideline
+
+These are the basic guidelines you should follow when you want to contribute to Noctalia.
+
+We welcome contributions of any size - bug fixes, new features, documentation improvements, themes, or configs.
+
+### Project Structure
+
+[Section titled “Project Structure”](https://docs.noctalia.dev/development/guideline/#project-structure)
+
+```
+Noctalia/
+
+├── shell.qml                   # Main shell entry point
+
+├── Modules/                    # UI components and panels
+
+│   ├── Bar/                    # Status bar and widgets
+
+│   ├── ControlCenter/          # Control center panel
+
+│   ├── Dock/                   # Application dock
+
+│   ├── Launcher/               # Application launcher
+
+│   ├── Settings/               # Settings panel
+
+│   └── ...                     # Other UI modules
+
+├── Services/                   # Backend services
+
+│   ├── AudioService.qml        # Audio management
+
+│   ├── BatteryService.qml      # Battery monitoring
+
+│   ├── IPCService.qml          # Inter-process communication
+
+│   └── ...                     # Other services
+
+├── Widgets/                    # Reusable UI components
+
+│   ├── NButton.qml             # Custom button component
+
+│   ├── NTextInput.qml          # Text input component
+
+│   └── ...                     # Other widgets
+
+├── Commons/                    # Shared utilities
+
+│   ├── Logger.qml              # Logging system
+
+│   ├── Settings.qml            # Settings management
+
+│   └── ...                     # Other utilities
+
+├── Assets/                     # Static assets
+
+│   ├── ColorScheme/            # Predefined color schemes
+
+│   ├── Translations/           # Internationalization files
+
+│   └── ...                     # Other assets
+
+└── Bin/                        # Development scripts
+```
+
+### Development Guidelines
+
+[Section titled “Development Guidelines”](https://docs.noctalia.dev/development/guideline/#development-guidelines)
+
+#### Setup
+
+[Section titled “Setup”](https://docs.noctalia.dev/development/guideline/#setup)
+
+[lefthook](https://github.com/evilmartians/lefthook#install) and [qmlfmt](https://github.com/jesperhh/qmlfmt) are used to format QML files. After cloning the repo, install `lefthook` & `qmlfmt` ([`qmlfmt-git`](https://aur.archlinux.org/packages/qmlfmt-git) on the AUR), and run `lefthook install` to install the pre-commit hook.
+
+#### Code Organization
+
+[Section titled “Code Organization”](https://docs.noctalia.dev/development/guideline/#code-organization)
+
+1. **Modular Design**: Place new components in the appropriate directory:
+
+   * `Modules/` - UI panels and major components
+   * `Services/` - Logic and backend functionality
+   * `Widgets/` - Reusable UI components
+   * `Commons/` - Shared utilities and helpers
+2. **Service-First Architecture**: Implement logic in services, keep UI components lightweight and focused on presentation.
+3. **Widget Reusability**: Use existing widgets from `Widgets/` directory before creating new ones. The `N*` prefixed widgets are our custom components.
+
+#### Code Quality Standards
+
+[Section titled “Code Quality Standards”](https://docs.noctalia.dev/development/guideline/#code-quality-standards)
+
+1. **Follow Existing Patterns**: Study how similar features are implemented and follow the same patterns.
+2. **Error Handling**: Implement robust error handling with proper logging using `Logger.qml`.
+3. **Testing**: Test changes with both Hyprland and Niri compositors where applicable.
+4. **Small PRs**: Prefer small, focused pull requests that are easier to review and test.
+
+### Code Standards
+
+[Section titled “Code Standards”](https://docs.noctalia.dev/development/guideline/#code-standards)
+
+**Avoid Qt5Compat**: We don’t use `Qt5Compat` since it’s deprecated and will be removed in future Qt versions. Instead, use modern Qt6 alternatives like `QtQuick.Effects` (especially `MultiEffect` for visual effects).
+
+**JavaScript Syntax**: When writing JavaScript in QML files, avoid ES6+ syntax features like arrow functions, destructuring, or template literals. Stick to ES5 syntax that `qmlfmt` can properly format and validate. This ensures consistency across the codebase and prevents formatting issues.
+
+Code Formatting
+
+Always run `qmlfmt` on your QML files before submitting PRs. Modern JavaScript syntax may cause formatting errors or inconsistent output.

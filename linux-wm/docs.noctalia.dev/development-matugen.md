@@ -1,0 +1,372 @@
+---
+url: https://docs.noctalia.dev/development/matugen/
+title: Create a Matugen template | Noctalia Docs
+source_domain: docs.noctalia.dev
+---
+
+# Create a Matugen template | Noctalia Docs
+
+# Create a Matugen template
+
+This guide walks you through adding a new **Matugen** template to **Noctalia**.
+
+---
+
+## Overview
+
+[Section titled “Overview”](https://docs.noctalia.dev/development/matugen/#overview)
+
+Adding a new template involves five steps:
+
+1. [Create the template file](https://docs.noctalia.dev/development/matugen/#step-1-create-the-template-file)
+2. [Add a settings toggle](https://docs.noctalia.dev/development/matugen/#step-2-add-a-settings-toggle)
+3. [Wire the template into the config generator](https://docs.noctalia.dev/development/matugen/#step-3-wire-it-into-the-config-generator)
+4. [Show the toggle only if the program exists](https://docs.noctalia.dev/development/matugen/#step-4-show-the-toggle-only-if-the-program-exists)
+5. [Add the UI toggle](https://docs.noctalia.dev/development/matugen/#step-5-add-the-ui-toggle)
+
+---
+
+## Step 1: Create the Template File
+
+[Section titled “Step 1: Create the Template File”](https://docs.noctalia.dev/development/matugen/#step-1-create-the-template-file)
+
+Create your template file in the Matugen templates directory.  
+For example, if you’re making one for kitty, create:
+
+**`Assets/MatugenTemplates/Terminal/kitty.conf`**
+
+```
+color0 {{colors.surface.default.hex}}
+
+color1 {{colors.error.default.hex}}
+
+color2 {{colors.tertiary.default.hex}}
+
+color3 {{colors.secondary.default.hex}}
+
+color4 {{colors.primary.default.hex}}
+
+color5 {{colors.tertiary_fixed_dim.default.hex}}
+
+color6 {{colors.secondary_fixed_dim.default.hex}}
+
+color7 {{colors.on_surface.default.hex}}
+
+color8 {{colors.outline.default.hex}}
+
+color9 {{colors.error.default.hex}}
+
+color10 {{colors.tertiary.default.hex}}
+
+color11 {{colors.secondary.default.hex}}
+
+color12 {{colors.primary.default.hex}}
+
+color13 {{colors.tertiary_fixed_dim.default.hex}}
+
+color14 {{colors.secondary_fixed_dim.default.hex}}
+
+color15 {{colors.on_surface.default.hex}}
+
+cursor                {{colors.on_surface.default.hex}}
+
+cursor_text_color     {{colors.surface.default.hex}}
+
+background            {{colors.surface.default.hex}}
+
+foreground            {{colors.on_surface.default.hex}}
+
+selection_foreground  {{colors.on_surface_variant.default.hex}}
+
+selection_background  {{colors.surface_variant.default.hex}}
+
+url_color             {{colors.primary.default.hex}}
+```
+
+Matugen uses template variables to map Material Design 3 colors to different app formats.  
+You can find all the available variables and their Material 3 mappings in the [Matugen wiki](https://github.com/InioX/matugen/wiki).
+
+---
+
+## Step 2: Add a Settings Toggle
+
+[Section titled “Step 2: Add a Settings Toggle”](https://docs.noctalia.dev/development/matugen/#step-2-add-a-settings-toggle)
+
+Create a setting to control whether this template is generated.  
+Open **`Commons/Settings.qml`**, find the `templates` JsonObject, and add a new property:
+
+```
+property JsonObject templates: JsonObject {
+
+// ... existing properties ...
+
+property bool kitty: false
+
+}
+```
+
+This adds a persistent toggle that defaults to `false`.
+
+---
+
+## Step 3: Wire It Into the Config Generator
+
+[Section titled “Step 3: Wire It Into the Config Generator”](https://docs.noctalia.dev/development/matugen/#step-3-wire-it-into-the-config-generator)
+
+Tell the system when to use the new template.  
+Open **`Services/MatugenTemplates.qml`** and find the appropriate configuration array:
+
+### For Terminal Emulators
+
+[Section titled “For Terminal Emulators”](https://docs.noctalia.dev/development/matugen/#for-terminal-emulators)
+
+Add to the `terminals` array in `addTerminalTemplates()`:
+
+```
+var terminals = [{
+
+"name": "foot",
+
+"path": "Terminal/foot",
+
+"output": "~/.config/foot/themes/noctalia"
+
+}, {
+
+"name": "kitty",
+
+"path": "Terminal/kitty.conf",
+
+"output": "~/.config/kitty/themes/noctalia.conf"
+
+}]
+```
+
+### For Applications
+
+[Section titled “For Applications”](https://docs.noctalia.dev/development/matugen/#for-applications)
+
+Add to the `applications` array:
+
+```
+readonly property var applications: [{
+
+"name": "myapp",
+
+"templates": [{
+
+"version": "myapp",
+
+"output": "~/.config/myapp/themes/noctalia.conf"
+
+}],
+
+"input": "myapp.conf",
+
+"postHook": AppThemeService.colorsApplyScript + " myapp"
+
+}]
+```
+
+The `postHook` function tells the system to run a script after generating the colors, which is useful for reloading the application’s theme.
+
+---
+
+## Step 4: Show the Toggle Only if the Program Exists
+
+[Section titled “Step 4: Show the Toggle Only if the Program Exists”](https://docs.noctalia.dev/development/matugen/#step-4-show-the-toggle-only-if-the-program-exists)
+
+We don’t want to display the toggle if the program isn’t installed.  
+Open **`Services/ProgramCheckerService.qml`** and:
+
+1. Add a property to track availability:
+
+```
+property bool myappAvailable: false
+```
+
+2. Add an entry to the `programsToCheck` object:
+
+```
+programsToCheck: {
+
+// ... existing entries ...
+
+"myappAvailable": ["which", "myapp"],
+
+}
+```
+
+This automatically updates `myappAvailable` when the program is detected.
+
+---
+
+## Step 5: Add the UI Toggle
+
+[Section titled “Step 5: Add the UI Toggle”](https://docs.noctalia.dev/development/matugen/#step-5-add-the-ui-toggle)
+
+Add the toggle to the settings panel.  
+Open **`Modules/Settings/Tabs/ColorSchemeTab.qml`**, find the appropriate collapsible section, and insert:
+
+```
+NCheckbox {
+
+label: "MyApp"
+
+description: ProgramCheckerService.myappAvailable
+
+? I18n.tr("settings.color-scheme.templates.programs.myapp.description", {
+
+"filepath": "~/.config/myapp/themes/noctalia.conf"
+
+})
+
+: I18n.tr("settings.color-scheme.templates.programs.myapp.description-missing", {
+
+"app": "myapp"
+
+})
+
+checked: Settings.data.templates.myapp
+
+enabled: ProgramCheckerService.myappAvailable
+
+opacity: ProgramCheckerService.myappAvailable ? 1.0 : 0.6
+
+onToggled: checked => {
+
+if (ProgramCheckerService.myappAvailable) {
+
+Settings.data.templates.myapp = checked
+
+AppThemeService.generate()
+
+}
+
+}
+
+}
+```
+
+This checkbox:
+
+* Shows a helpful description based on whether the app is installed
+* Disables itself automatically if the program isn’t available
+* Regenerates colors right away when toggled
+
+---
+
+## How Color Generation Works
+
+[Section titled “How Color Generation Works”](https://docs.noctalia.dev/development/matugen/#how-color-generation-works)
+
+Noctalia supports two different color generation modes:
+
+### Wallpaper-Based Colors
+
+[Section titled “Wallpaper-Based Colors”](https://docs.noctalia.dev/development/matugen/#wallpaper-based-colors)
+
+When `Settings.data.colorSchemes.useWallpaperColors` is enabled, the system uses Matugen to analyze the current wallpaper and generates a complete Material Design 3 color palette. This palette is then used to generate all enabled templates using the standard Matugen workflow.
+
+### Predefined Color Schemes
+
+[Section titled “Predefined Color Schemes”](https://docs.noctalia.dev/development/matugen/#predefined-color-schemes)
+
+When wallpaper colors are disabled, Noctalia uses predefined color schemes (like Nord, Dracula, Catppuccin, etc.). For these schemes, the system:
+
+1. **Generates a Material Design 3 palette** - Uses `ColorsConvert.js` helper functions to create a complete Material Design 3 color palette from the predefined scheme’s key colors
+2. **Maps predefined colors intelligently** - Primary, secondary, tertiary, error, and surface colors from the predefined scheme are used as the foundation
+3. **Generates complementary colors** - Container colors, “on” colors (for text/icons), surface variants, and outline colors are generated using color theory algorithms
+4. **Processes templates directly** - Templates are copied and color placeholders are replaced with the generated Material Design 3 colors using `sed`
+
+This approach ensures that predefined color schemes maintain their authentic look while providing a complete Material Design 3 palette for consistent theming across all applications.
+
+**Terminal Templates**
+
+Terminal templates are handled specially - they use predefined color schemes directly for better contrast and readability rather than the generated Material Design 3 palette. This ensures terminal applications have optimal readability with high contrast colors.
+
+---
+
+## Template Categories
+
+[Section titled “Template Categories”](https://docs.noctalia.dev/development/matugen/#template-categories)
+
+Templates are organized into collapsible sections in the settings:
+
+### UI Components
+
+[Section titled “UI Components”](https://docs.noctalia.dev/development/matugen/#ui-components)
+
+* **GTK** - GTK 3/4 theme files
+* **Qt** - Qt5/Qt6 color schemes
+* **KColorScheme** - KDE color schemes
+
+### Terminal Emulators
+
+[Section titled “Terminal Emulators”](https://docs.noctalia.dev/development/matugen/#terminal-emulators)
+
+* **Foot** - Foot terminal theme
+* **Ghostty** - Ghostty terminal theme
+* **Kitty** - Kitty terminal theme
+
+### Applications
+
+[Section titled “Applications”](https://docs.noctalia.dev/development/matugen/#applications)
+
+* **Fuzzel** - Application launcher theme
+* **Discord Clients** - Various Discord client themes (Vesktop, WebCord, ArmCord, etc.)
+* **Pywalfox** - Firefox theme via Pywalfox
+
+### Miscellaneous
+
+[Section titled “Miscellaneous”](https://docs.noctalia.dev/development/matugen/#miscellaneous)
+
+* **User Templates** - Enable custom user-defined templates from `~/.config/matugen/`
+
+---
+
+## User Templates
+
+[Section titled “User Templates”](https://docs.noctalia.dev/development/matugen/#user-templates)
+
+Users can create their own templates by:
+
+1. Enabling “User Templates” in settings
+2. This creates a `user-templates.toml` in `~/.config/noctalia/`, this is where the user can add their own templates
+3. Templates can be anywhere as long as the path is correctly used in the `user-templates.toml`
+
+User templates are automatically executed after the main matugen command when enabled.
+
+---
+
+## Template Development Tips
+
+[Section titled “Template Development Tips”](https://docs.noctalia.dev/development/matugen/#template-development-tips)
+
+### Testing Your Template
+
+[Section titled “Testing Your Template”](https://docs.noctalia.dev/development/matugen/#testing-your-template)
+
+1. Enable your template in the settings
+2. Switch between different predefined color schemes to ensure your template works with all of them
+3. Test with both wallpaper-based and predefined color schemes
+4. Verify that the generated files are placed in the correct locations
+
+### Common Issues
+
+[Section titled “Common Issues”](https://docs.noctalia.dev/development/matugen/#common-issues)
+
+* **Path expansion**: Make sure to use `~` in output paths as the system handles tilde expansion
+* **Color mapping**: Ensure your template uses the correct Material Design 3 color tokens
+* **File permissions**: Some applications may require specific file permissions or locations
+* **Post hooks**: Use `AppThemeService.colorsApplyScript` for common reload commands
+
+### Template File Organization
+
+[Section titled “Template File Organization”](https://docs.noctalia.dev/development/matugen/#template-file-organization)
+
+* Terminal templates go in `Assets/MatugenTemplates/Terminal/`
+* Application templates go directly in `Assets/MatugenTemplates/`
+* Use descriptive filenames that match the application name
+
+---
