@@ -1,0 +1,65 @@
+---
+url: https://react.dev/reference/react-dom/hooks
+title: Built-in React DOM Hooks – React
+source_domain: react.dev
+---
+
+# Built-in React DOM Hooks – React
+
+[API Reference](https://react.dev/reference/react)
+
+# Built-in React DOM Hooks
+
+The `react-dom` package contains Hooks that are only supported for web applications (which run in the browser DOM environment). These Hooks are not supported in non-browser environments like iOS, Android, or Windows applications. If you are looking for Hooks that are supported in web browsers *and other environments* see [the React Hooks page](https://react.dev/reference/react/hooks). This page lists all the Hooks in the `react-dom` package.
+
+---
+
+## Form Hooks
+
+*Forms* let you create interactive controls for submitting information. To manage forms in your components, use one of these Hooks:
+
+* [`useFormStatus`](https://react.dev/reference/react-dom/hooks/useFormStatus) allows you to make updates to the UI based on the status of a form.
+
+```
+function Form({ action }) {
+
+async function increment(n) {
+
+return n + 1;
+
+}
+
+const [count, incrementFormAction] = useActionState(increment, 0);
+
+return (
+
+<form action={action}>
+
+<button formAction={incrementFormAction}>Count: {count}</button>
+
+<Button />
+
+</form>
+
+);
+
+}
+
+function Button() {
+
+const { pending } = useFormStatus();
+
+return (
+
+<button disabled={pending} type="submit">
+
+Submit
+
+</button>
+
+);
+
+}
+```
+
+[NextuseFormStatus](https://react.dev/reference/react-dom/hooks/useFormStatus)
