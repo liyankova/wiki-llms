@@ -1,0 +1,445 @@
+---
+url: https://bun.com/docs/test/lifecycle
+title: Lifecycle hooks - Bun
+source_domain: bun.com
+---
+
+# Lifecycle hooks - Bun
+
+The test runner supports the following lifecycle hooks. This is useful for loading test fixtures, mocking data, and configuring the test environment.
+
+| Hook | Description |
+| --- | --- |
+| `beforeAll` | Runs once before all tests. |
+| `beforeEach` | Runs before each test. |
+| `afterEach` | Runs after each test. |
+| `afterAll` | Runs once after all tests. |
+| `onTestFinished` | Runs after a single test finishes (after all `afterEach`). |
+
+## [​](https://bun.com/docs/test/lifecycle#per-test-setup-and-teardown) Per-Test Setup and Teardown
+
+Perform per-test setup and teardown logic with `beforeEach` and `afterEach`.
+
+![https://mintcdn.com/bun-1dd33a4e/Hq64iapoQXHbYMEN/icons/typescript.svg?fit=max&auto=format&n=Hq64iapoQXHbYMEN&q=85&s=c6cceedec8f82d2cc803d7c6ec82b240](https://mintcdn.com/bun-1dd33a4e/Hq64iapoQXHbYMEN/icons/typescript.svg?fit=max&auto=format&n=Hq64iapoQXHbYMEN&q=85&s=c6cceedec8f82d2cc803d7c6ec82b240)test.ts
+
+Copy
+
+```
+import { beforeEach, afterEach, test } from "bun:test";
+
+beforeEach(() => {
+  console.log("running test.");
+});
+
+afterEach(() => {
+  console.log("done with test.");
+});
+
+// tests...
+test("example test", () => {
+  // This test will have beforeEach run before it
+  // and afterEach run after it
+});
+```
+
+## [​](https://bun.com/docs/test/lifecycle#per-scope-setup-and-teardown) Per-Scope Setup and Teardown
+
+Perform per-scope setup and teardown logic with `beforeAll` and `afterAll`. The scope is determined by where the hook is defined.
+
+### [​](https://bun.com/docs/test/lifecycle#scoped-to-a-describe-block) Scoped to a Describe Block
+
+To scope the hooks to a particular describe block:
+
+![https://mintcdn.com/bun-1dd33a4e/Hq64iapoQXHbYMEN/icons/typescript.svg?fit=max&auto=format&n=Hq64iapoQXHbYMEN&q=85&s=c6cceedec8f82d2cc803d7c6ec82b240](https://mintcdn.com/bun-1dd33a4e/Hq64iapoQXHbYMEN/icons/typescript.svg?fit=max&auto=format&n=Hq64iapoQXHbYMEN&q=85&s=c6cceedec8f82d2cc803d7c6ec82b240)test.ts
+
+Copy
+
+```
+import { describe, beforeAll, afterAll, test } from "bun:test";
+
+describe("test group", () => {
+  beforeAll(() => {
+    // setup for this describe block
+    console.log("Setting up test group");
+  });
+
+  afterAll(() => {
+    // teardown for this describe block
+    console.log("Tearing down test group");
+  });
+
+  test("test 1", () => {
+    // test implementation
+  });
+
+  test("test 2", () => {
+    // test implementation
+  });
+});
+```
+
+### [​](https://bun.com/docs/test/lifecycle#scoped-to-a-test-file) Scoped to a Test File
+
+To scope the hooks to an entire test file:
+
+![https://mintcdn.com/bun-1dd33a4e/Hq64iapoQXHbYMEN/icons/typescript.svg?fit=max&auto=format&n=Hq64iapoQXHbYMEN&q=85&s=c6cceedec8f82d2cc803d7c6ec82b240](https://mintcdn.com/bun-1dd33a4e/Hq64iapoQXHbYMEN/icons/typescript.svg?fit=max&auto=format&n=Hq64iapoQXHbYMEN&q=85&s=c6cceedec8f82d2cc803d7c6ec82b240)test.ts
+
+Copy
+
+```
+import { describe, beforeAll, afterAll, test } from "bun:test";
+
+beforeAll(() => {
+  // setup for entire file
+  console.log("Setting up test file");
+});
+
+afterAll(() => {
+  // teardown for entire file
+  console.log("Tearing down test file");
+});
+
+describe("test group", () => {
+  test("test 1", () => {
+    // test implementation
+  });
+});
+```
+
+### [​](https://bun.com/docs/test/lifecycle#ontestfinished) `onTestFinished`
+
+Use `onTestFinished` to run a callback after a single test completes. It runs after all `afterEach` hooks.
+
+![https://mintcdn.com/bun-1dd33a4e/Hq64iapoQXHbYMEN/icons/typescript.svg?fit=max&auto=format&n=Hq64iapoQXHbYMEN&q=85&s=c6cceedec8f82d2cc803d7c6ec82b240](https://mintcdn.com/bun-1dd33a4e/Hq64iapoQXHbYMEN/icons/typescript.svg?fit=max&auto=format&n=Hq64iapoQXHbYMEN&q=85&s=c6cceedec8f82d2cc803d7c6ec82b240)test.ts
+
+Copy
+
+```
+import { test, onTestFinished } from "bun:test";
+
+test("cleanup after test", () => {
+  onTestFinished(() => {
+    // runs after all afterEach hooks
+    console.log("test finished");
+  });
+});
+```
+
+Not supported in concurrent tests; use `test.serial` instead.
+
+## [​](https://bun.com/docs/test/lifecycle#global-setup-and-teardown) Global Setup and Teardown
+
+To scope the hooks to an entire multi-file test run, define the hooks in a separate file.
+
+![https://mintcdn.com/bun-1dd33a4e/Hq64iapoQXHbYMEN/icons/typescript.svg?fit=max&auto=format&n=Hq64iapoQXHbYMEN&q=85&s=c6cceedec8f82d2cc803d7c6ec82b240](https://mintcdn.com/bun-1dd33a4e/Hq64iapoQXHbYMEN/icons/typescript.svg?fit=max&auto=format&n=Hq64iapoQXHbYMEN&q=85&s=c6cceedec8f82d2cc803d7c6ec82b240)setup.ts
+
+Copy
+
+```
+import { beforeAll, afterAll } from "bun:test";
+
+beforeAll(() => {
+  // global setup
+  console.log("Global test setup");
+  // Initialize database connections, start servers, etc.
+});
+
+afterAll(() => {
+  // global teardown
+  console.log("Global test teardown");
+  // Close database connections, stop servers, etc.
+});
+```
+
+Then use `--preload` to run the setup script before any test files.
+
+terminal
+
+Copy
+
+```
+bun test --preload ./setup.ts
+```
+
+To avoid typing `--preload` every time you run tests, it can be added to your `bunfig.toml`:
+
+bunfig.toml
+
+Copy
+
+```
+[test]
+preload = ["./setup.ts"]
+```
+
+## [​](https://bun.com/docs/test/lifecycle#practical-examples) Practical Examples
+
+### [​](https://bun.com/docs/test/lifecycle#database-setup) Database Setup
+
+![https://mintcdn.com/bun-1dd33a4e/Hq64iapoQXHbYMEN/icons/typescript.svg?fit=max&auto=format&n=Hq64iapoQXHbYMEN&q=85&s=c6cceedec8f82d2cc803d7c6ec82b240](https://mintcdn.com/bun-1dd33a4e/Hq64iapoQXHbYMEN/icons/typescript.svg?fit=max&auto=format&n=Hq64iapoQXHbYMEN&q=85&s=c6cceedec8f82d2cc803d7c6ec82b240)database-setup.ts
+
+Copy
+
+```
+import { beforeAll, afterAll, beforeEach, afterEach } from "bun:test";
+import { createConnection, closeConnection, clearDatabase } from "./db";
+
+let connection;
+
+beforeAll(async () => {
+  // Connect to test database
+  connection = await createConnection({
+    host: "localhost",
+    database: "test_db",
+  });
+});
+
+afterAll(async () => {
+  // Close database connection
+  await closeConnection(connection);
+});
+
+beforeEach(async () => {
+  // Start with clean database for each test
+  await clearDatabase(connection);
+});
+```
+
+### [​](https://bun.com/docs/test/lifecycle#api-server-setup) API Server Setup
+
+![https://mintcdn.com/bun-1dd33a4e/Hq64iapoQXHbYMEN/icons/typescript.svg?fit=max&auto=format&n=Hq64iapoQXHbYMEN&q=85&s=c6cceedec8f82d2cc803d7c6ec82b240](https://mintcdn.com/bun-1dd33a4e/Hq64iapoQXHbYMEN/icons/typescript.svg?fit=max&auto=format&n=Hq64iapoQXHbYMEN&q=85&s=c6cceedec8f82d2cc803d7c6ec82b240)server-setup.ts
+
+Copy
+
+```
+import { beforeAll, afterAll } from "bun:test";
+import { startServer, stopServer } from "./server";
+
+let server;
+
+beforeAll(async () => {
+  // Start test server
+  server = await startServer({
+    port: 3001,
+    env: "test",
+  });
+});
+
+afterAll(async () => {
+  // Stop test server
+  await stopServer(server);
+});
+```
+
+### [​](https://bun.com/docs/test/lifecycle#mock-setup) Mock Setup
+
+![https://mintcdn.com/bun-1dd33a4e/Hq64iapoQXHbYMEN/icons/typescript.svg?fit=max&auto=format&n=Hq64iapoQXHbYMEN&q=85&s=c6cceedec8f82d2cc803d7c6ec82b240](https://mintcdn.com/bun-1dd33a4e/Hq64iapoQXHbYMEN/icons/typescript.svg?fit=max&auto=format&n=Hq64iapoQXHbYMEN&q=85&s=c6cceedec8f82d2cc803d7c6ec82b240)mock-setup.ts
+
+Copy
+
+```
+import { beforeEach, afterEach } from "bun:test";
+import { mock } from "bun:test";
+
+beforeEach(() => {
+  // Set up common mocks
+  mock.module("./api-client", () => ({
+    fetchUser: mock(() => Promise.resolve({ id: 1, name: "Test User" })),
+    createUser: mock(() => Promise.resolve({ id: 2 })),
+  }));
+});
+
+afterEach(() => {
+  // Clear all mocks after each test
+  mock.restore();
+});
+```
+
+## [​](https://bun.com/docs/test/lifecycle#async-lifecycle-hooks) Async Lifecycle Hooks
+
+All lifecycle hooks support async functions:
+
+![https://mintcdn.com/bun-1dd33a4e/Hq64iapoQXHbYMEN/icons/typescript.svg?fit=max&auto=format&n=Hq64iapoQXHbYMEN&q=85&s=c6cceedec8f82d2cc803d7c6ec82b240](https://mintcdn.com/bun-1dd33a4e/Hq64iapoQXHbYMEN/icons/typescript.svg?fit=max&auto=format&n=Hq64iapoQXHbYMEN&q=85&s=c6cceedec8f82d2cc803d7c6ec82b240)test.ts
+
+Copy
+
+```
+import { beforeAll, afterAll, test } from "bun:test";
+
+beforeAll(async () => {
+  // Async setup
+  await new Promise(resolve => setTimeout(resolve, 100));
+  console.log("Async setup complete");
+});
+
+afterAll(async () => {
+  // Async teardown
+  await new Promise(resolve => setTimeout(resolve, 100));
+  console.log("Async teardown complete");
+});
+
+test("async test", async () => {
+  // Test will wait for beforeAll to complete
+  await expect(Promise.resolve("test")).resolves.toBe("test");
+});
+```
+
+## [​](https://bun.com/docs/test/lifecycle#nested-hooks) Nested Hooks
+
+Hooks can be nested and will run in the appropriate order:
+
+![https://mintcdn.com/bun-1dd33a4e/Hq64iapoQXHbYMEN/icons/typescript.svg?fit=max&auto=format&n=Hq64iapoQXHbYMEN&q=85&s=c6cceedec8f82d2cc803d7c6ec82b240](https://mintcdn.com/bun-1dd33a4e/Hq64iapoQXHbYMEN/icons/typescript.svg?fit=max&auto=format&n=Hq64iapoQXHbYMEN&q=85&s=c6cceedec8f82d2cc803d7c6ec82b240)test.ts
+
+Copy
+
+```
+import { describe, beforeAll, beforeEach, afterEach, afterAll, test } from "bun:test";
+
+beforeAll(() => console.log("File beforeAll"));
+afterAll(() => console.log("File afterAll"));
+
+describe("outer describe", () => {
+  beforeAll(() => console.log("Outer beforeAll"));
+  beforeEach(() => console.log("Outer beforeEach"));
+  afterEach(() => console.log("Outer afterEach"));
+  afterAll(() => console.log("Outer afterAll"));
+
+  describe("inner describe", () => {
+    beforeAll(() => console.log("Inner beforeAll"));
+    beforeEach(() => console.log("Inner beforeEach"));
+    afterEach(() => console.log("Inner afterEach"));
+    afterAll(() => console.log("Inner afterAll"));
+
+    test("nested test", () => {
+      console.log("Test running");
+    });
+  });
+});
+```
+
+Copy
+
+```
+// Output order:
+// File beforeAll
+// Outer beforeAll
+// Inner beforeAll
+// Outer beforeEach
+// Inner beforeEach
+// Test running
+// Inner afterEach
+// Outer afterEach
+// Inner afterAll
+// Outer afterAll
+// File afterAll
+```
+
+## [​](https://bun.com/docs/test/lifecycle#error-handling) Error Handling
+
+If a lifecycle hook throws an error, it will affect test execution:
+
+![https://mintcdn.com/bun-1dd33a4e/Hq64iapoQXHbYMEN/icons/typescript.svg?fit=max&auto=format&n=Hq64iapoQXHbYMEN&q=85&s=c6cceedec8f82d2cc803d7c6ec82b240](https://mintcdn.com/bun-1dd33a4e/Hq64iapoQXHbYMEN/icons/typescript.svg?fit=max&auto=format&n=Hq64iapoQXHbYMEN&q=85&s=c6cceedec8f82d2cc803d7c6ec82b240)test.ts
+
+Copy
+
+```
+import { beforeAll, test } from "bun:test";
+
+beforeAll(() => {
+  // If this throws, all tests in this scope will be skipped
+  throw new Error("Setup failed");
+});
+
+test("this test will be skipped", () => {
+  // This won't run because beforeAll failed
+});
+```
+
+For better error handling:
+
+![https://mintcdn.com/bun-1dd33a4e/Hq64iapoQXHbYMEN/icons/typescript.svg?fit=max&auto=format&n=Hq64iapoQXHbYMEN&q=85&s=c6cceedec8f82d2cc803d7c6ec82b240](https://mintcdn.com/bun-1dd33a4e/Hq64iapoQXHbYMEN/icons/typescript.svg?fit=max&auto=format&n=Hq64iapoQXHbYMEN&q=85&s=c6cceedec8f82d2cc803d7c6ec82b240)test.ts
+
+Copy
+
+```
+import { beforeAll, test, expect } from "bun:test";
+
+beforeAll(async () => {
+  try {
+    await setupDatabase();
+  } catch (error) {
+    console.error("Database setup failed:", error);
+    throw error; // Re-throw to fail the test suite
+  }
+});
+```
+
+## [​](https://bun.com/docs/test/lifecycle#best-practices) Best Practices
+
+### [​](https://bun.com/docs/test/lifecycle#keep-hooks-simple) Keep Hooks Simple
+
+![https://mintcdn.com/bun-1dd33a4e/Hq64iapoQXHbYMEN/icons/typescript.svg?fit=max&auto=format&n=Hq64iapoQXHbYMEN&q=85&s=c6cceedec8f82d2cc803d7c6ec82b240](https://mintcdn.com/bun-1dd33a4e/Hq64iapoQXHbYMEN/icons/typescript.svg?fit=max&auto=format&n=Hq64iapoQXHbYMEN&q=85&s=c6cceedec8f82d2cc803d7c6ec82b240)test.ts
+
+Copy
+
+```
+// Good: Simple, focused setup
+beforeEach(() => {
+  clearLocalStorage();
+  resetMocks();
+});
+
+// Avoid: Complex logic in hooks
+beforeEach(async () => {
+  // Too much complex logic makes tests hard to debug
+  const data = await fetchComplexData();
+  await processData(data);
+  await setupMultipleServices(data);
+});
+```
+
+### [​](https://bun.com/docs/test/lifecycle#use-appropriate-scope) Use Appropriate Scope
+
+![https://mintcdn.com/bun-1dd33a4e/Hq64iapoQXHbYMEN/icons/typescript.svg?fit=max&auto=format&n=Hq64iapoQXHbYMEN&q=85&s=c6cceedec8f82d2cc803d7c6ec82b240](https://mintcdn.com/bun-1dd33a4e/Hq64iapoQXHbYMEN/icons/typescript.svg?fit=max&auto=format&n=Hq64iapoQXHbYMEN&q=85&s=c6cceedec8f82d2cc803d7c6ec82b240)test.ts
+
+Copy
+
+```
+// Good: File-level setup for shared resources
+beforeAll(async () => {
+  await startTestServer();
+});
+
+// Good: Test-level setup for test-specific state
+beforeEach(() => {
+  user = createTestUser();
+});
+```
+
+### [​](https://bun.com/docs/test/lifecycle#clean-up-resources) Clean Up Resources
+
+![https://mintcdn.com/bun-1dd33a4e/Hq64iapoQXHbYMEN/icons/typescript.svg?fit=max&auto=format&n=Hq64iapoQXHbYMEN&q=85&s=c6cceedec8f82d2cc803d7c6ec82b240](https://mintcdn.com/bun-1dd33a4e/Hq64iapoQXHbYMEN/icons/typescript.svg?fit=max&auto=format&n=Hq64iapoQXHbYMEN&q=85&s=c6cceedec8f82d2cc803d7c6ec82b240)test.ts
+
+Copy
+
+```
+import { afterAll, afterEach } from "bun:test";
+
+afterEach(() => {
+  // Clean up after each test
+  document.body.innerHTML = "";
+  localStorage.clear();
+});
+
+afterAll(async () => {
+  // Clean up expensive resources
+  await closeDatabase();
+  await stopServer();
+});
+```
+
+Was this page helpful?
+
+[Suggest edits](https://github.com/oven-sh/bun/edit/main/docs/test/lifecycle.mdx)[Raise issue](https://github.com/oven-sh/bun/issues/new?title=Issue on docs&body=Path: /test/lifecycle)
+
+⌘I
