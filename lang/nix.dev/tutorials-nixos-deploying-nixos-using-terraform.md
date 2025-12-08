@@ -1,0 +1,181 @@
+---
+url: https://nix.dev/tutorials/nixos/deploying-nixos-using-terraform
+title: Deploying NixOS using Terraform — nix.dev  documentation
+source_domain: nix.dev
+---
+
+# Deploying NixOS using Terraform — nix.dev  documentation
+
+[Skip to main content](https://nix.dev/tutorials/nixos/deploying-nixos-using-terraform#main-content)
+
+[![](https://nix.dev/_static/img/nix.svg)
+nix.dev](https://nix.dev/)
+
+Official documentation for getting things done with Nix.
+
+nix.dev as [PDF](https://nix.dev/nix-dev.pdf)
+
+* [.md](https://nix.dev/_sources/tutorials/nixos/deploying-nixos-using-terraform.md "Download source file")
+
+# Deploying NixOS using Terraform
+
+# Deploying NixOS using Terraform[#](https://nix.dev/tutorials/nixos/deploying-nixos-using-terraform#deploying-nixos-using-terraform "Link to this heading")
+
+Assuming you’re [familiar with the basics of Terraform](https://www.terraform.io/intro/index.html), by the end of this tutorial you will have provisioned an Amazon Web Services (AWS) instance with Terraform, and will be able to use Nix to deploy incremental changes to NixOS running on the instance.
+
+We’ll look at how to boot a NixOS machine and how to deploy the incremental changes.
+
+## Booting NixOS image[#](https://nix.dev/tutorials/nixos/deploying-nixos-using-terraform#booting-nixos-image "Link to this heading")
+
+1. Start by providing the Terraform executable:
+
+```
+$ nix-shell -p terraform
+```
+
+2. We are using [Terraform Cloud](https://app.terraform.io) as a [state/locking backend](https://www.terraform.io/docs/state/purpose.html):
+
+```
+$ terraform login
+```
+
+3. Make sure to [create an organization](https://app.terraform.io/app/organizations/new), like `myorganization`, in your Terraform Cloud account.
+4. Inside `myorganization`, [create a workspace](https://app.terraform.io/app/cachix/workspaces/new) by choosing **CLI-driven workflow** and pick a name, like `myapp`.
+5. Inside your workspace, under `Settings / General`, change Execution Mode to `Local`.
+6. Inside a new directory, create a `main.tf` file with the following contents. This will start an AWS instance with the NixOS image using one SSH keypair and an SSH security group:
+
+```
+terraform {
+    backend "remote" {
+        organization = "myorganization"
+
+        workspaces {
+            name = "myapp"
+        }
+    }
+}
+
+provider "aws" {
+    region = "eu-central-1"
+}
+
+module "nixos_image" {
+    source  = "git::https://github.com/tweag/terraform-nixos.git//aws_image_nixos?ref=5f5a0408b299874d6a29d1271e9bffeee4c9ca71"
+    release = "20.09"
+}
+
+resource "aws_security_group" "ssh_and_egress" {
+    ingress {
+        from_port   = 22
+        to_port     = 22
+        protocol    = "tcp"
+        cidr_blocks = [ "0.0.0.0/0" ]
+    }
+
+    egress {
+        from_port       = 0
+        to_port         = 0
+        protocol        = "-1"
+        cidr_blocks     = ["0.0.0.0/0"]
+    }
+}
+
+resource "tls_private_key" "state_ssh_key" {
+    algorithm = "RSA"
+}
+
+resource "local_file" "machine_ssh_key" {
+    sensitive_content = tls_private_key.state_ssh_key.private_key_pem
+    filename          = "${path.module}/id_rsa.pem"
+    file_permission   = "0600"
+}
+
+resource "aws_key_pair" "generated_key" {
+    key_name   = "generated-key-${sha256(tls_private_key.state_ssh_key.public_key_openssh)}"
+    public_key = tls_private_key.state_ssh_key.public_key_openssh
+}
+
+resource "aws_instance" "machine" {
+    ami             = module.nixos_image.ami
+    instance_type   = "t3.micro"
+    security_groups = [ aws_security_group.ssh_and_egress.name ]
+    key_name        = aws_key_pair.generated_key.key_name
+
+    root_block_device {
+        volume_size = 50 # GiB
+    }
+}
+
+output "public_dns" {
+    value = aws_instance.machine.public_dns
+}
+```
+
+The only NixOS specific snippet is:
+
+```
+module "nixos_image" {
+  source = "git::https://github.com/tweag/terraform-nixos.git/aws_image_nixos?ref=5f5a0408b299874d6a29d1271e9bffeee4c9ca71"
+  release = "20.09"
+}
+```
+
+Note
+
+The `aws_image_nixos` module will return a NixOS AMI given a [NixOS release number](https://status.nixos.org)
+so that the `aws_instance` resource can reference the AMI in the [instance\_type](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance#instance_type) argument.
+
+5. Make sure to [configure AWS credentials](https://registry.terraform.io/providers/hashicorp/aws/latest/docs#authentication).
+6. Applying the Terraform configuration should get you a running NixOS:
+
+```
+$ terraform init
+$ terraform apply
+```
+
+## Deploying NixOS changes[#](https://nix.dev/tutorials/nixos/deploying-nixos-using-terraform#deploying-nixos-changes "Link to this heading")
+
+Once the AWS instance is running a NixOS image via Terraform, we can teach Terraform to always build the latest NixOS configuration and apply those changes to your instance.
+
+1. Create `configuration.nix` with the following contents:
+
+```
+1{ config, lib, pkgs, ... }: {
+2  imports = [ <nixpkgs/nixos/modules/virtualisation/amazon-image.nix> ];
+3
+4  # Open https://search.nixos.org/options for all options
+5}
+```
+
+2. Append the following snippet to your `main.tf`:
+
+```
+module "deploy_nixos" {
+    source = "git::https://github.com/tweag/terraform-nixos.git//deploy_nixos?ref=5f5a0408b299874d6a29d1271e9bffeee4c9ca71"
+    nixos_config = "${path.module}/configuration.nix"
+    target_host = aws_instance.machine.public_ip
+    ssh_private_key_file = local_file.machine_ssh_key.filename
+    ssh_agent = false
+}
+```
+
+3. Deploy:
+
+```
+$ terraform init
+$ terraform apply
+```
+
+## Caveats[#](https://nix.dev/tutorials/nixos/deploying-nixos-using-terraform#caveats "Link to this heading")
+
+* The `deploy_nixos` module requires NixOS to be installed on the target machine and Nix on the host machine.
+* The `deploy_nixos` module doesn’t work when the client and target architectures are different (unless you use [distributed builds](https://nix.dev/manual/nix/stable/advanced-topics/distributed-builds.html)).
+* If you need to inject a value into Nix, there is no elegant solution.
+* Each machine is evaluated separately, so note that your memory requirements will grow linearly with the number of machines.
+
+## Next steps[#](https://nix.dev/tutorials/nixos/deploying-nixos-using-terraform#next-steps "Link to this heading")
+
+* It’s possible to [switch to Google Compute Engine](https://github.com/tweag/terraform-nixos/tree/master/google_image_nixos#readme).
+* The [`deploy_nixos` module](https://github.com/tweag/terraform-nixos/tree/master/deploy_nixos#readme) supports a number of arguments, for example to upload keys.
+
+Contents
