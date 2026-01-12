@@ -1,17 +1,21 @@
 ---
-url: https://wiki.hypr.land/Nix/Options-Overrides
+url: https://wiki.hypr.land/Nix/Options-Overrides/
 title: Options & Overrides – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
 # Options & Overrides – Hyprland Wiki
 
+[Nix](https://wiki.hypr.land/Nix/)
+
+Options & Overrides
+
 # Options & Overrides
 
 You can override the package through the `.override` or `.overrideAttrs`
 mechanisms.  
-This is easily achievable on [NixOS](https://wiki.hypr.land/Hyprland-on-NixOS) or
-[Home Manager](https://wiki.hypr.land/Hyprland-on-Home-Manager).
+This is easily achievable on [NixOS](https://wiki.hypr.land/Nix/Hyprland-on-NixOS) or
+[Home Manager](https://wiki.hypr.land/Nix/Hyprland-on-Home-Manager).
 
 ## Package options
 
@@ -65,3 +69,7 @@ $ nix repl
 nix-repl> :lf github:hyprwm/Hyprland
 nix-repl> :bl outputs.packages.x86_64-linux.hyprland.overrideAttrs (self: super: { cmakeBuildType = "Debug" })
 ```
+
+Last updated on January 8, 2026
+
+[Hyprland on Other Distros](https://wiki.hypr.land/Nix/Hyprland-on-other-distros/ "Hyprland on Other Distros")[Plugins](https://wiki.hypr.land/Nix/Plugins/ "Plugins")

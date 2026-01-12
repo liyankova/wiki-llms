@@ -1,10 +1,14 @@
 ---
-url: https://wiki.hypr.land/Getting-Started/Master-Tutorial
+url: https://wiki.hypr.land/Getting-Started/Master-Tutorial/
 title: Master tutorial – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
 # Master tutorial – Hyprland Wiki
+
+[Getting Started](https://wiki.hypr.land/Getting-Started/)
+
+Master tutorial
 
 # Master tutorial
 
@@ -16,7 +20,7 @@ pages where necessary.
 
 ## Install Hyprland
 
-See [Installation](https://wiki.hypr.land/Installation) and come back here once you have
+See [Installation](https://wiki.hypr.land/Getting-Started/Installation) and come back here once you have
 successfully installed Hyprland.
 
 Install `kitty` (default terminal emulator). This is available in most distros'
@@ -46,7 +50,7 @@ Please bear in mind 3D acceleration in VMs may be pretty slow.
 
 ## Launching Hyprland
 
-Hyprland can be executed by typing `Hyprland` in your tty.
+Hyprland can be executed by typing `start-hyprland` in your tty.
 
 If you are adventurous and on systemd, you can also try uwsm. Please note uwsm has some issues and for the majority of users, it’s recommended to use Hyprland without it.
 Uwsm provides additional features such as [xdg-autostart](https://www.freedesktop.org/software/systemd/man/latest/systemd-xdg-autostart-generator.html) support, launching any application as a systemd-unit with `uwsm app` helper, and the ability to enable services for programs that rely on a graphical session and provide such services (e.g waybar). See [uwsm](https://wiki.hypr.land/Useful-Utilities/Systemd-start) page for further instructions.
@@ -55,7 +59,7 @@ Warning
 
 Do **not** launch Hyprland with `root` permissions (don’t `sudo`)
 
-You can see some launch flags by doing `Hyprland -h`, these include setting the
+You can see some launch flags by doing `start-hyprland -- -h`, these include setting the
 config path, ignoring a check for the above, etc.
 
 Login managers are not officially supported, but here’s a short compatibility
@@ -75,7 +79,7 @@ list:
 Do you want to just get Hyprland pre-configured like a DE,
 without making your own configuration from scratch?
 
-Check out the [Preconfigured setups page](https://wiki.hypr.land/Preconfigured-setups)
+Check out the [Preconfigured setups page](https://wiki.hypr.land/Getting-Started/Preconfigured-setups)
 to see a few options.
 
 These dotfiles should do everything for you, and have their own tutorials as well.
@@ -152,3 +156,7 @@ A few more environment variables for forcing Wayland mode are documented
 
 You can check whether an app is running in xwayland or not with
 `hyprctl clients`.
+
+Last updated on January 8, 2026
+
+[Installation](https://wiki.hypr.land/Getting-Started/Installation/ "Installation")[Preconfigured setups](https://wiki.hypr.land/Getting-Started/Preconfigured-setups/ "Preconfigured setups")

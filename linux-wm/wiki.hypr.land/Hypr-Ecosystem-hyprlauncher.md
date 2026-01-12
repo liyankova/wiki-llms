@@ -1,10 +1,14 @@
 ---
-url: https://wiki.hypr.land/Hypr-Ecosystem/hyprlauncher
+url: https://wiki.hypr.land/Hypr-Ecosystem/hyprlauncher/
 title: hyprlauncher – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
 # hyprlauncher – Hyprland Wiki
+
+[Hypr Ecosystem](https://wiki.hypr.land/Hypr-Ecosystem/)
+
+hyprlauncher
 
 # hyprlauncher
 
@@ -22,7 +26,7 @@ To open hyprlauncher, just bind `hyprlauncher` to a key.
 
 ### Theming
 
-Theme follows your [hyprtoolkit](https://wiki.hypr.land/hyprtoolkit) theme.
+Theme follows your [hyprtoolkit](https://wiki.hypr.land/Hypr-Ecosystem/hyprtoolkit) theme.
 
 ### Config
 
@@ -54,5 +58,16 @@ Prefixes can only be one character.
 | `desktop_prefix` | Prefix for the desktop finder to be used. | string | empty |
 | `unicode_prefix` | Prefix for the unicode finder to be used. | string | `.` |
 | `math_prefix` | Prefix for the math finder to be used. | string | `=` |
+| `font_prefix` | Prefix for the font finder to be used. | string | `'` |
 | `desktop_launch_prefix` | Launch prefix for each desktop app, e.g. `uwsm app --` . | string | empty |
 | `desktop_icons` | Whether to enable desktop icons in the results. | bool | `true` |
+
+#### UI
+
+| option | description | type | default |
+| --- | --- | --- | --- |
+| window\_size | the size of the launcher | vec2 | `400 260` |
+
+Last updated on January 8, 2026
+
+[hyprpicker](https://wiki.hypr.land/Hypr-Ecosystem/hyprpicker/ "hyprpicker")[hypridle](https://wiki.hypr.land/Hypr-Ecosystem/hypridle/ "hypridle")

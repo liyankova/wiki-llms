@@ -1,10 +1,14 @@
 ---
-url: https://wiki.hypr.land/Configuring/Tearing
+url: https://wiki.hypr.land/Configuring/Tearing/
 title: Tearing – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
 # Tearing – Hyprland Wiki
+
+[Configuring](https://wiki.hypr.land/Configuring/)
+
+Tearing
 
 # Tearing
 
@@ -61,3 +65,7 @@ Likely issue with your graphics driver.
 
 Please *do not* report issues if this is the culprit. Unfortunately, it’s most
 likely your GPU driver’s fault.
+
+Last updated on January 8, 2026
+
+[Gestures](https://wiki.hypr.land/Configuring/Gestures/ "Gestures")[Dwindle Layout](https://wiki.hypr.land/Configuring/Dwindle-Layout/ "Dwindle Layout")

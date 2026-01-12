@@ -1,10 +1,14 @@
 ---
-url: https://wiki.hypr.land/Configuring/Animations
+url: https://wiki.hypr.land/Configuring/Animations/
 title: Animations – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
 # Animations – Hyprland Wiki
+
+[Configuring](https://wiki.hypr.land/Configuring/)
+
+Animations
 
 # Animations
 
@@ -21,12 +25,12 @@ can omit further args.
 
 `SPEED` is the amount of ds (1ds = 100ms) the animation will take.
 
-`CURVE` is the bezier curve name, see [curves](https://wiki.hypr.land/Configuring/Animations#curves).
+`CURVE` is the bezier curve name, see [curves](https://wiki.hypr.land/Configuring/Animations/#curves).
 
 `STYLE` (optional) is the animation style.
 
 The animations are a tree. If an animation is unset, it will inherit its
-parent’s values. See [the animation tree](https://wiki.hypr.land/Configuring/Animations#animation-tree).
+parent’s values. See [the animation tree](https://wiki.hypr.land/Configuring/Animations/#animation-tree).
 
 ### Examples
 
@@ -119,3 +123,7 @@ You can choose between `top`, `bottom`, `left` or `right`.
 ```
 animation = windows, 1, 8, default, slide left
 ```
+
+Last updated on January 8, 2026
+
+[Workspace Rules](https://wiki.hypr.land/Configuring/Workspace-Rules/ "Workspace Rules")[Gestures](https://wiki.hypr.land/Configuring/Gestures/ "Gestures")

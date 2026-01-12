@@ -1,10 +1,14 @@
 ---
-url: https://wiki.hypr.land/Getting-Started/Installation
+url: https://wiki.hypr.land/Getting-Started/Installation/
 title: Installation – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
 # Installation – Hyprland Wiki
+
+[Getting Started](https://wiki.hypr.land/Getting-Started/)
+
+Installation
 
 # Installation
 
@@ -27,8 +31,8 @@ Hyprland if you plan to use one. Blame NVIDIA for this.
 
 We officially run and test Hyprland on Arch and NixOS, and we guarantee Hyprland will work there. For any other distro
 (not based on Arch/Nix) you might have varying amounts of success. However,
-since Hyprland is extremely bleeding-edge, distros like Pop!\_OS, Ubuntu, etc.
-will have **major** issues running Hyprland. Rolling release distros like Fedora, openSUSE, etc. will likely be fine.
+since Hyprland is extremely bleeding-edge, point release distros like Pop!\_OS, Fedora, Ubuntu, etc.
+will have **major** issues running Hyprland. Rolling release distros like openSUSE, Solus ,etc. will likely be fine.
 
 ## Installation
 
@@ -59,7 +63,13 @@ Install a tagged release from the arch packages:
 sudo pacman -S hyprland
 ```
 
-or install from the AUR, which compiles the latest source:
+##### Compile from source automatically
+
+Warning
+
+Read the warning about using `-git` packages or compiling from source under [Installation](https://wiki.hypr.land/Getting-Started/Installation/#installation) first!
+
+Install from the AUR, which compiles the latest source:
 
 ```
 yay -S hyprland-git
@@ -113,7 +123,7 @@ sudo zypper in hyprland-devel
 ```
 
 Alternatively, you can also follow the instructions under
-[“Manual (Manual Build)”](https://wiki.hypr.land/Getting-Started/Installation#manual-manual-build) to build Hyprland yourself.
+[“Manual (Manual Build)”](https://wiki.hypr.land/Getting-Started/Installation/#manual-manual-build) to build Hyprland yourself.
 
 Note: *Hyprland is not available for Leap, as most libraries (and compiler) that
 Hyprland needs are too old.*
@@ -144,7 +154,7 @@ sudo apt install hyprland
 ```
 
 Alternatively, you can also follow the instructions under
-[“Manual (Manual Build)”](https://wiki.hypr.land/Getting-Started/Installation#manual-manual-build) to build Hyprland yourself.
+[“Manual (Manual Build)”](https://wiki.hypr.land/Getting-Started/Installation/#manual-manual-build) to build Hyprland yourself.
 
 Note
 
@@ -238,7 +248,7 @@ Warning
 
 Always use the latest version of Ubuntu for the most up to date dependencies.
 
-Note: Your mileage may vary, as GDM has some bugs with Hyprland. Check the [Master Tutorial](https://wiki.hypr.land/Master-Tutorial) for more info.
+Note: Your mileage may vary, as GDM has some bugs with Hyprland. Check the [Master Tutorial](https://wiki.hypr.land/Getting-Started/Master-Tutorial) for more info.
 
 Refer to the gist if anything fails.
 
@@ -339,7 +349,7 @@ C++ standard library has to support that (`gcc>=15` or `clang>=19`).
 **Arch**
 
 ```
-yay -S ninja gcc cmake meson libxcb xcb-proto xcb-util xcb-util-keysyms libxfixes libx11 libxcomposite libxrender libxcursor pixman wayland-protocols cairo pango libxkbcommon xcb-util-wm xorg-xwayland libinput libliftoff libdisplay-info cpio tomlplusplus hyprlang-git hyprcursor-git hyprwayland-scanner-git xcb-util-errors hyprutils-git glaze hyprgraphics-git aquamarine-git re2 hyprland-qtutils-git
+yay -S ninja gcc cmake meson libxcb xcb-proto xcb-util xcb-util-keysyms libxfixes libx11 libxcomposite libxrender libxcursor pixman wayland-protocols cairo pango libxkbcommon xcb-util-wm xorg-xwayland libinput libliftoff libdisplay-info cpio tomlplusplus hyprlang-git hyprcursor-git hyprwayland-scanner-git hyprwire-git xcb-util-errors hyprutils-git glaze hyprgraphics-git aquamarine-git re2 hyprland-qtutils-git muparser
 ```
 
 *(Please make a pull request or open an issue if any packages are missing from
@@ -502,10 +512,14 @@ virt-viewer --attach hypr-vm
 ```
 
 Finally on the guest follow the instructions above for either
-[installing hyprland-git from the aur](https://wiki.hypr.land/Getting-Started/Installation#installation) or
-[building manually](https://wiki.hypr.land/Getting-Started/Installation#manual-manual-build).
+[installing hyprland-git from the aur](https://wiki.hypr.land/Getting-Started/Installation/#installation) or
+[building manually](https://wiki.hypr.land/Getting-Started/Installation/#manual-manual-build).
 
 Warning
 
 Make sure you install `mesa` as the OpenGL driver. The virgl drivers are
 included in `mesa`.
+
+Last updated on January 8, 2026
+
+[Master tutorial](https://wiki.hypr.land/Getting-Started/Master-Tutorial/ "Master tutorial")

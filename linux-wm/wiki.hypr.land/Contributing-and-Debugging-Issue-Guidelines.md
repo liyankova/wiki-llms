@@ -6,6 +6,10 @@ source_domain: wiki.hypr.land
 
 # Issue Guidelines – Hyprland Wiki
 
+[Contributing and Debugging](https://wiki.hypr.land/Contributing-and-Debugging/)
+
+Issue Guidelines
+
 # Issue Guidelines
 
 Due to the influx of low quality or incomprehensible issues,
@@ -65,3 +69,7 @@ Please ***do not*** ping the members just because the discussion has become stal
 or failed to gather attention. If that is the case, attempt to bring it back
 on track by posting *further* relevant information that might spark a discussion,
 or tell people interested about the discussion so that they can “like” it.
+
+Last updated on January 8, 2026
+
+[PR Guidelines](https://wiki.hypr.land/Contributing-and-Debugging/PR-Guidelines/ "PR Guidelines")

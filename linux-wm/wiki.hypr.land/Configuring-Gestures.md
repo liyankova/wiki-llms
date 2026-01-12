@@ -1,10 +1,14 @@
 ---
-url: https://wiki.hypr.land/Configuring/Gestures
+url: https://wiki.hypr.land/Configuring/Gestures/
 title: Gestures – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
 # Gestures – Hyprland Wiki
+
+[Configuring](https://wiki.hypr.land/Configuring/)
+
+Gestures
 
 # Gestures
 
@@ -59,3 +63,21 @@ from the original gesture including direction, mods, fingers and scale.
 | `close` | closes the active window | none |
 | `fullscreen` | fullscreens the active window | none for fullscreen, `maximize` for maximize |
 | `float` | floats the active window | none for toggle, `float` or `tile` for one-way |
+
+### Flags
+
+Gestures support flags though the syntax:
+
+```
+gesture[flags] = ...
+```
+
+Supported flags:
+
+| Flag | Name | Description |
+| --- | --- | --- |
+| `p` | bypass | Allows the gesture to bypass shortcut inhibitors. |
+
+Last updated on January 8, 2026
+
+[Animations](https://wiki.hypr.land/Configuring/Animations/ "Animations")[Tearing](https://wiki.hypr.land/Configuring/Tearing/ "Tearing")

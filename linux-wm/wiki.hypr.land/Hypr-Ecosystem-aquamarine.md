@@ -1,10 +1,14 @@
 ---
-url: https://wiki.hypr.land/Hypr-Ecosystem/aquamarine
+url: https://wiki.hypr.land/Hypr-Ecosystem/aquamarine/
 title: aquamarine – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
 # aquamarine – Hyprland Wiki
+
+[Hypr Ecosystem](https://wiki.hypr.land/Hypr-Ecosystem/)
+
+aquamarine
 
 # aquamarine
 
@@ -29,3 +33,7 @@ Configuration options are passed via environment variables starting with `AQ_` t
 ## Documentation
 
 Documentation will come soon.
+
+Last updated on January 8, 2026
+
+[hyprwayland-scanner](https://wiki.hypr.land/Hypr-Ecosystem/hyprwayland-scanner/ "hyprwayland-scanner")[hyprgraphics](https://wiki.hypr.land/Hypr-Ecosystem/hyprgraphics/ "hyprgraphics")

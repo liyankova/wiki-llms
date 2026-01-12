@@ -1,10 +1,14 @@
 ---
-url: https://wiki.hypr.land/Hypr-Ecosystem/hyprlang
+url: https://wiki.hypr.land/Hypr-Ecosystem/hyprlang/
 title: hyprlang – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
 # hyprlang – Hyprland Wiki
+
+[Hypr Ecosystem](https://wiki.hypr.land/Hypr-Ecosystem/)
+
+hyprlang
 
 # hyprlang
 
@@ -203,3 +207,7 @@ Some important information
 ## Developer Documentation
 
 See the documentation at [hyprland.org/hyprlang](https://hyprland.org/hyprlang/).
+
+Last updated on January 8, 2026
+
+[hyprutils](https://wiki.hypr.land/Hypr-Ecosystem/hyprutils/ "hyprutils")[hyprwayland-scanner](https://wiki.hypr.land/Hypr-Ecosystem/hyprwayland-scanner/ "hyprwayland-scanner")

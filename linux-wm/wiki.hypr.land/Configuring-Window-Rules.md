@@ -1,17 +1,21 @@
 ---
-url: https://wiki.hypr.land/Configuring/Window-Rules
+url: https://wiki.hypr.land/Configuring/Window-Rules/
 title: Window Rules – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
 # Window Rules – Hyprland Wiki
 
+[Configuring](https://wiki.hypr.land/Configuring/)
+
+Window Rules
+
 # Window Rules
 
 Warning
 
 Rules are evaluated top to bottom, so the order they’re written in does matter!
-More info in [Notes](https://wiki.hypr.land/Configuring/Window-Rules#notes)
+More info in [Notes](https://wiki.hypr.land/Configuring/Window-Rules/#notes)
 
 ## Window Rules
 
@@ -114,7 +118,7 @@ It is not possible to `float` (or any other static rule) a window based on a cha
 | center | [on] | If the window is floating, will center it on the monitor. |
 | pseudo | [on] | Pseudotiles a window. |
 | monitor | [id] | Sets the monitor on which a window should open. `id` can be either the id number or the name (e.g. `1` or `DP-1`). |
-| workspace | [w] | Sets the workspace on which a window should open (for workspace syntax, see [dispatchers->workspaces](https://wiki.hypr.land/Dispatchers#workspaces)). You can also set [w] to `unset`. This will unset all previous workspace rules applied to this window. Additionally you can add `silent` after the workspace to make the window open silently. |
+| workspace | [w] | Sets the workspace on which a window should open (for workspace syntax, see [dispatchers->workspaces](https://wiki.hypr.land/Configuring/Dispatchers#workspaces)). You can also set [w] to `unset`. This will unset all previous workspace rules applied to this window. Additionally you can add `silent` after the workspace to make the window open silently. |
 | no\_initial\_focus | [on] | Disables the initial focus to the window |
 | pin | [on] | Pins the window (i.e. show it on all workspaces). *Note: floating only*. |
 | group | [options] | Sets window group properties. See the note below. |
@@ -152,7 +156,7 @@ Dynamic effects are re-evaluated every time a property changes.
 | no\_max\_size | [on] | Removes max size limitations. Especially useful with windows that report invalid max sizes (e.g. winecfg). |
 | stay\_focused | [on] | Forces focus on the window as long as it’s visible. |
 | animation | [style] ([opt]) | Forces an animation onto a window, with a selected opt. Opt is optional. |
-| border\_color | [c] | Force the border color of the window. Options for c: `color`/`color ... color angle` -> sets the active border color/gradient OR `color color`/`color ... color angle color ... color [angle]` -> sets the active and inactive border color/gradient of the window. See [variables->colors](https://wiki.hypr.land/Variables#variable-types) for color definition. |
+| border\_color | [c] | Force the border color of the window. Options for c: `color`/`color ... color angle` -> sets the active border color/gradient OR `color color`/`color ... color angle color ... color [angle]` -> sets the active and inactive border color/gradient of the window. See [variables->colors](https://wiki.hypr.land/Configuring/Variables#variable-types) for color definition. |
 | idle\_inhibit | [mode] | Sets an idle inhibit rule for the window. If active, apps like `hypridle` will not fire. Modes: `none`, `always`, `focus`, `fullscreen`. |
 | opacity | [a] | Additional opacity multiplier. Options for a: `float` -> sets an overall opacity, `float float` -> sets active\_opacity and inactive\_opacity respectively, `float float float` -> sets active\_opacity, inactive\_opacity and fullscreen\_opacity respectively. |
 | tag | [name] | Applies the tag `name` to the window, use prefix `+`/`-` to set/unset flag, or no prefix to toggle the flag. |
@@ -175,17 +179,17 @@ Dynamic effects are re-evaluated every time a property changes.
 | no\_shadow | [on] | Disables shadows for the window. |
 | no\_shortcuts\_inhibit | [on] | Disallows the app from [inhibiting your shortcuts](https://wayland.app/protocols/keyboard-shortcuts-inhibit-unstable-v1). |
 | no\_screen\_share | [on] | Hides the window and its popups from screen sharing by drawing black rectangles in their place. The rectangles are drawn even if other windows are above. |
-| no\_vrr | [on] | Disables VRR for the window. Only works when [`misc:vrr`](https://wiki.hypr.land/Variables/#Misc) is set to `2` or `3`. |
+| no\_vrr | [on] | Disables VRR for the window. Only works when [`misc:vrr`](https://wiki.hypr.land/Configuring/Variables/#Misc) is set to `2` or `3`. |
 | opaque | [on] | Forces the window to be opaque. |
 | force\_rgbx | [on] | Forces Hyprland to ignore the alpha channel on the whole window’s surfaces, effectively making it *actually, fully 100% opaque*. |
 | sync\_fullscreen | [on] | Whether the fullscreen mode should always be the same as the one sent to the window (will only take effect on the next fullscreen mode change). |
-| immediate | [on] | Forces the window to allow tearing. See [the Tearing page](https://wiki.hypr.land/Tearing). |
+| immediate | [on] | Forces the window to allow tearing. See [the Tearing page](https://wiki.hypr.land/Configuring/Tearing). |
 | xray | [on] | Sets blur xray mode for the window. |
-| render\_unfocused | [on] | Forces the window to think it’s being rendered when it’s not visible. See also [Variables - Misc](https://wiki.hypr.land/Variables/#Misc) for setting `render_unfocused_fps`. |
+| render\_unfocused | [on] | Forces the window to think it’s being rendered when it’s not visible. See also [Variables - Misc](https://wiki.hypr.land/Configuring/Variables/#Misc) for setting `render_unfocused_fps`. |
 | scroll\_mouse | [float] | Forces the window to override the variable `input:scroll_factor`. |
 | scroll\_touchpad | [float] | Forces the window to override the variable `input:touchpad:scroll_factor`. |
 
-All dynamic effects can be set with `setprop`, see [`setprop`](https://wiki.hypr.land/Dispatchers#setprop).
+All dynamic effects can be set with `setprop`, see [`setprop`](https://wiki.hypr.land/Configuring/Dispatchers#setprop).
 
 ### `group` window rule options
 
@@ -361,3 +365,19 @@ but they have different props and effects.
 | order | [n] | Sets the order relative to other layers. A higher `n` means closer to the edge of the monitor. Can be negative. `n = 0` if unspecified. |
 | above\_lock | [0/1/2] | If non-zero, renders the layer above the lockscreen when the session is locked. If set to `2`, you can interact with the layer on the lockscreen, otherwise it will only be rendered above it. |
 | no\_screen\_share | [on] | Hides the layer from screen sharing by drawing a black rectangle over it. |
+
+### Examples
+
+```
+layerrule = blur on, match:namespace waybar
+
+layerrule {
+  name = no_anim_for_selection
+  no_anim = on
+  match:namespace = selection
+}
+```
+
+Last updated on January 8, 2026
+
+[Dispatchers](https://wiki.hypr.land/Configuring/Dispatchers/ "Dispatchers")[Workspace Rules](https://wiki.hypr.land/Configuring/Workspace-Rules/ "Workspace Rules")

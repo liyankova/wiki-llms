@@ -6,6 +6,10 @@ source_domain: wiki.hypr.land
 
 # Example configurations – Hyprland Wiki
 
+[Configuring](https://wiki.hypr.land/Configuring/)
+
+Example configurations
+
 # Example configurations
 
 This page houses links to a few repositories with beautiful Hyprland
@@ -64,3 +68,7 @@ more configurations will not be merged.
 ![coffebar/dotfiles screenshot](https://github.com/coffebar/dotfiles/raw/6a5d595c594f108cd10219df08d338e98e1d2d7d/screenshot.png)
 
 <https://github.com/coffebar/dotfiles>
+
+Last updated on January 8, 2026
+
+[Uncommon tips & tricks](https://wiki.hypr.land/Configuring/Uncommon-tips--tricks/ "Uncommon tips & tricks")[Performance](https://wiki.hypr.land/Configuring/Performance/ "Performance")

@@ -1,10 +1,14 @@
 ---
-url: https://wiki.hypr.land/Configuring/Using-hyprctl
+url: https://wiki.hypr.land/Configuring/Using-hyprctl/
 title: Using hyprctl – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
 # Using hyprctl – Hyprland Wiki
+
+[Configuring](https://wiki.hypr.land/Configuring/)
+
+Using hyprctl
 
 # Using hyprctl
 
@@ -44,7 +48,7 @@ hyprctl dispatch pseudo x
 
 Returns: `ok` on success, an error message on fail.
 
-See [Dispatchers](https://wiki.hypr.land/Dispatchers) for a list of dispatchers.
+See [Dispatchers](https://wiki.hypr.land/Configuring/Dispatchers) for a list of dispatchers.
 
 ### keyword
 
@@ -202,7 +206,7 @@ Gets a property value of a window.
 hyprctl getprop [window] [property]
 ```
 
-Where `window` is as described [here](https://wiki.hypr.land/Dispatchers#parameter-explanation), and `property` is any which can be set with [setprop](https://wiki.hypr.land/Dispatchers/#setprop).
+Where `window` is as described [here](https://wiki.hypr.land/Configuring/Dispatchers#parameter-explanation), and `property` is any which can be set with [setprop](https://wiki.hypr.land/Configuring/Dispatchers/#setprop).
 
 #### Notes
 
@@ -294,7 +298,7 @@ hyprctl getoption general:border_size
 hyprctl getoption input:touchpad:disable_while_typing
 ```
 
-See [Variables](https://wiki.hypr.land/Variables) for sections and options you can use.
+See [Variables](https://wiki.hypr.land/Configuring/Variables) for sections and options you can use.
 
 ## Batch
 
@@ -322,3 +326,7 @@ flag list:
 j -> output in JSON
 i -> select instance (id or index in hyprctl instances)
 ```
+
+Last updated on January 8, 2026
+
+[Permissions](https://wiki.hypr.land/Configuring/Permissions/ "Permissions")[Expanding functionality](https://wiki.hypr.land/Configuring/Expanding-functionality/ "Expanding functionality")

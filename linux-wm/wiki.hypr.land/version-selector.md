@@ -6,11 +6,14 @@ source_domain: wiki.hypr.land
 
 # Version selector ⚙️ – Hyprland Wiki
 
+Version selector ⚙️
+
 # Version selector ⚙️
 
 Select your preferred wiki version below:
 
 * [Latest Git](https://wiki.hypr.land/)
+* [v0.53.0](https://wiki.hypr.land/0.53.0/)
 * [v0.52.0](https://wiki.hypr.land/0.52.0/)
 * [v0.51.0](https://wiki.hypr.land/0.51.0/)
 * [v0.50.0](https://wiki.hypr.land/0.50.0/)
@@ -65,3 +68,5 @@ Select your preferred wiki version below:
 * [v0.18.0beta](https://wiki.hypr.land/0.18.0beta/)
 * [v0.17.0beta](https://wiki.hypr.land/0.17.0beta/)
 * [v0.16.0beta](https://wiki.hypr.land/0.16.0beta/)
+
+Last updated on January 8, 2026

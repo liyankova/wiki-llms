@@ -1,10 +1,14 @@
 ---
-url: https://wiki.hypr.land/Hypr-Ecosystem/hyprqt6engine
+url: https://wiki.hypr.land/Hypr-Ecosystem/hyprqt6engine/
 title: hyprqt6engine – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
 # hyprqt6engine – Hyprland Wiki
+
+[Hypr Ecosystem](https://wiki.hypr.land/Hypr-Ecosystem/)
+
+hyprqt6engine
 
 # hyprqt6engine
 
@@ -42,3 +46,7 @@ category `misc:`
 | `single_click_activate` | Whether single-clicks should activate, or open. | bool | `true` |
 | `menus_have_icons` | Whether context menus should include icons. | bool | `true` |
 | `shortcuts_for_context_menus` | Whether context menu options should show their keyboard shortcuts. | bool | `true` |
+
+Last updated on January 8, 2026
+
+[hyprland-qt-support](https://wiki.hypr.land/Hypr-Ecosystem/hyprland-qt-support/ "hyprland-qt-support")[hyprpwcenter](https://wiki.hypr.land/Hypr-Ecosystem/hyprpwcenter/ "hyprpwcenter")

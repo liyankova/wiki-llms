@@ -1,10 +1,12 @@
 ---
-url: https://wiki.hypr.land/Configuring
+url: https://wiki.hypr.land/Configuring/
 title: Configuring – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
 # Configuring – Hyprland Wiki
+
+Configuring
 
 # Configuring
 
@@ -18,4 +20,6 @@ It links to other pages where necessary, and will walk you through:
 
 It also contains some sample configurations you can take inspiration from.
 
-Start with [the Start Page](https://wiki.hypr.land/Start).
+Start with [the Start Page](https://wiki.hypr.land/Configuring/Start).
+
+Last updated on January 8, 2026

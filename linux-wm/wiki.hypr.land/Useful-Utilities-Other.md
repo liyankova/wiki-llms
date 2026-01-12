@@ -1,10 +1,14 @@
 ---
-url: https://wiki.hypr.land/Useful-Utilities/Other
+url: https://wiki.hypr.land/Useful-Utilities/Other/
 title: Other – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
 # Other – Hyprland Wiki
+
+[Useful Utilities](https://wiki.hypr.land/Useful-Utilities/)
+
+Other
 
 # Other
 
@@ -73,3 +77,7 @@ exec-once = udiskie
 ### Other useful utilities
 
 The website [We Are Wayland Now](https://wearewaylandnow.com/) details some other useful utilities and applications for Wayland like docks, email clients, and so on, along with some other useful information about compatibility on Wayland.
+
+Last updated on January 8, 2026
+
+[File Managers](https://wiki.hypr.land/Useful-Utilities/File-Managers/ "File Managers")[Hypr Ecosystem](https://wiki.hypr.land/Useful-Utilities/Hypr-Ecosystem/ "Hypr Ecosystem")

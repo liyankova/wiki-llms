@@ -1,10 +1,14 @@
 ---
-url: https://wiki.hypr.land/Hypr-Ecosystem/hyprsunset
+url: https://wiki.hypr.land/Hypr-Ecosystem/hyprsunset/
 title: hyprsunset – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
 # hyprsunset – Hyprland Wiki
+
+[Hypr Ecosystem](https://wiki.hypr.land/Hypr-Ecosystem/)
+
+hyprsunset
 
 # hyprsunset
 
@@ -119,3 +123,7 @@ bindel = ,XF86MonBrightnessUp, exec, hyprctl hyprsunset gamma +10
 Warning
 
 Using the gamma control will degrade color accuracy. If your monitor does support software control, it is highly recommended to use that instead.
+
+Last updated on January 8, 2026
+
+[hyprsysteminfo](https://wiki.hypr.land/Hypr-Ecosystem/hyprsysteminfo/ "hyprsysteminfo")[hyprpolkitagent](https://wiki.hypr.land/Hypr-Ecosystem/hyprpolkitagent/ "hyprpolkitagent")

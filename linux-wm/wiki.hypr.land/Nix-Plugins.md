@@ -1,10 +1,14 @@
 ---
-url: https://wiki.hypr.land/Nix/Plugins
+url: https://wiki.hypr.land/Nix/Plugins/
 title: Plugins – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
 # Plugins – Hyprland Wiki
+
+[Nix](https://wiki.hypr.land/Nix/)
+
+Plugins
 
 # Plugins
 
@@ -15,8 +19,8 @@ building and managing plugins.
 Warning
 
 Using plugins using the syntax below requires you to be using Hyprland through
-the [Home Manager module](https://wiki.hypr.land/Hyprland-on-Home-Manager) or the
-[upstream NixOS module](https://wiki.hypr.land/Hyprland-on-NixOS#upstream-module).
+the [Home Manager module](https://wiki.hypr.land/Nix/Hyprland-on-Home-Manager) or the
+[upstream NixOS module](https://wiki.hypr.land/Nix/Hyprland-on-NixOS#upstream-module).
 
 ## Using plugins from Nixpkgs
 
@@ -139,3 +143,7 @@ home.nix
 In a similar manner to `stdenv.mkDerivation`, `mkHyprlandPlugin` takes an
 attrset with mostly the same options as `mkDerivation`, as it is essentially a
 wrapper around it.
+
+Last updated on January 8, 2026
+
+[Options & Overrides](https://wiki.hypr.land/Nix/Options-Overrides/ "Options & Overrides")[Contributing and Debugging](https://wiki.hypr.land/Nix/Contributing-and-Debugging/ "Contributing and Debugging")

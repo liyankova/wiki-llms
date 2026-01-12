@@ -1,10 +1,14 @@
 ---
-url: https://wiki.hypr.land/Hypr-Ecosystem/hyprlock
+url: https://wiki.hypr.land/Hypr-Ecosystem/hyprlock/
 title: hyprlock – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
 # hyprlock – Hyprland Wiki
+
+[Hypr Ecosystem](https://wiki.hypr.land/Hypr-Ecosystem/)
+
+hyprlock
 
 # hyprlock
 
@@ -97,7 +101,7 @@ bezier = linear, 1, 1, 0, 0
 animation = fade, 1, 1.8, linear
 ```
 
-Available animations can be found in the [animation tree](https://wiki.hypr.land/Hypr-Ecosystem/hyprlock#animation-tree).
+Available animations can be found in the [animation tree](https://wiki.hypr.land/Hypr-Ecosystem/hyprlock/#animation-tree).
 The optional `STYLE` parameter for the `animation` keyword is currently unused by hyprlock.
 
 Check out Hyprland’s [animation documentation](https://wiki.hypr.land/Configuring/Animations) for more information.
@@ -374,7 +378,7 @@ Behaviour of `swap_font_color` is as follows:
 * `outline_thickness` is not `0`: if set, font and inner colors will be swapped on password check and authentication failure.
 * `swap_font_color` will narrow the accent colors from a gradient to a single color by using the first specified color.
 
-`placeholder_text` and `fail_text` both support [variable substitution](https://wiki.hypr.land/Hypr-Ecosystem/hyprlock#variable-substitution).
+`placeholder_text` and `fail_text` both support [variable substitution](https://wiki.hypr.land/Hypr-Ecosystem/hyprlock/#variable-substitution).
 
 **Example input-field**
 
@@ -421,7 +425,7 @@ Draws a label.
 
 #### Dynamic Labels
 
-The `text` option supports [variable substitution](https://wiki.hypr.land/Hypr-Ecosystem/hyprlock#variable-substitution) and launching shell commands.  
+The `text` option supports [variable substitution](https://wiki.hypr.land/Hypr-Ecosystem/hyprlock/#variable-substitution) and launching shell commands.  
 For example:
 
 ```
@@ -462,3 +466,7 @@ label {
 
 * `SIGUSR1`: Unlocks hyprlock. For example, you can switch to a another tty and run `pkill -USR1 hyprlock`.
 * `SIGUSR2`: Updates labels and images. See above.
+
+Last updated on January 8, 2026
+
+[hypridle](https://wiki.hypr.land/Hypr-Ecosystem/hypridle/ "hypridle")[xdg-desktop-portal-hyprland](https://wiki.hypr.land/Hypr-Ecosystem/xdg-desktop-portal-hyprland/ "xdg-desktop-portal-hyprland")

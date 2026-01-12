@@ -1,10 +1,16 @@
 ---
-url: https://wiki.hypr.land/Plugins/Development/Getting-Started
+url: https://wiki.hypr.land/Plugins/Development/Getting-Started/
 title: Getting started – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
 # Getting started – Hyprland Wiki
+
+[Plugins](https://wiki.hypr.land/Plugins/)
+
+[Development](https://wiki.hypr.land/Plugins/Development/)
+
+Getting started
 
 # Getting started
 
@@ -170,5 +176,9 @@ as a “reload” of the plugin.
 Take a look at the `src/plugins/PluginAPI.hpp` header. It has comments to every
 method to let you know what it is.
 
-For more explanation on a few concepts, see [Advanced](https://wiki.hypr.land/Plugins/Advanced) and
-[Plugin Guidelines](https://wiki.hypr.land/Plugins/Plugin-Guidelines)
+For more explanation on a few concepts, see [Advanced](https://wiki.hypr.land/Plugins/Development/Advanced) and
+[Plugin Guidelines](https://wiki.hypr.land/Plugins/Development/Plugin-Guidelines)
+
+Last updated on January 8, 2026
+
+[Plugin guidelines](https://wiki.hypr.land/Plugins/Development/Plugin-Guidelines/ "Plugin guidelines")

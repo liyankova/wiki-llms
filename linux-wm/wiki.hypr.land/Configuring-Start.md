@@ -1,10 +1,14 @@
 ---
-url: https://wiki.hypr.land/Configuring/Start
+url: https://wiki.hypr.land/Configuring/Start/
 title: Start – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
 # Start – Hyprland Wiki
+
+[Configuring](https://wiki.hypr.land/Configuring/)
+
+Start
 
 # Start
 
@@ -32,7 +36,7 @@ The default config is not complete and does not list all the options / features
 of Hyprland. Please refer to this wiki page and the pages linked further down
 here for full configuration instructions.
 
-**Make sure to read the [Variables](https://wiki.hypr.land/Variables) page as well**. It covers all
+**Make sure to read the [Variables](https://wiki.hypr.land/Configuring/Variables) page as well**. It covers all
 the toggleable / numerical options.
 
 ## Language style and syntax
@@ -42,11 +46,15 @@ See the [hyprlang page](https://wiki.hypr.land/Hypr-Ecosystem/hyprlang).
 ## Basic configuring
 
 To configure Hyprland’s options, animations, styling, etc. see
-[Variables](https://wiki.hypr.land/Variables).
+[Variables](https://wiki.hypr.land/Configuring/Variables).
 
 ## Advanced configuring
 
 Some keywords (binds, curves, execs, monitors, etc.) are not variables but
 define special behavior.
 
-See all of them in [Keywords](https://wiki.hypr.land/Keywords) and the sidebar.
+See all of them in [Keywords](https://wiki.hypr.land/Configuring/Keywords) and the sidebar.
+
+Last updated on January 8, 2026
+
+[Variables](https://wiki.hypr.land/Configuring/Variables/ "Variables")

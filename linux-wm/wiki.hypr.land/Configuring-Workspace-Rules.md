@@ -1,10 +1,14 @@
 ---
-url: https://wiki.hypr.land/Configuring/Workspace-Rules
+url: https://wiki.hypr.land/Configuring/Workspace-Rules/
 title: Workspace Rules – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
 # Workspace Rules – Hyprland Wiki
+
+[Configuring](https://wiki.hypr.land/Configuring/)
+
+Workspace Rules
 
 # Workspace Rules
 
@@ -13,7 +17,7 @@ instance, you can define a workspace where all windows are drawn without borders
 or gaps.
 
 For layout-specific rules, see the specific layout page. For example:
-[Master Layout->Workspace Rules](https://wiki.hypr.land/Master-Layout#workspace-rules).
+[Master Layout->Workspace Rules](https://wiki.hypr.land/Configuring/Master-Layout#workspace-rules).
 
 ### Workspace selectors
 
@@ -47,10 +51,10 @@ workspace = WORKSPACE, RULES
 ```
 
 * WORKSPACE is a valid workspace identifier (see
-  [Dispatchers->Workspaces](https://wiki.hypr.land/Dispatchers#workspaces)). This field is
+  [Dispatchers->Workspaces](https://wiki.hypr.land/Configuring/Dispatchers#workspaces)). This field is
   mandatory. This *can be* a workspace selector, but please note
   workspace selectors can only match *existing* workspaces.
-* RULES is one (or more) rule(s) as described here in [rules](https://wiki.hypr.land/Configuring/Workspace-Rules#rules).
+* RULES is one (or more) rule(s) as described here in [rules](https://wiki.hypr.land/Configuring/Workspace-Rules/#rules).
 
 ### Examples
 
@@ -67,10 +71,10 @@ To replicate “smart gaps” / “no gaps when only” from other WMs/Composito
 ```
 workspace = w[tv1], gapsout:0, gapsin:0
 workspace = f[1], gapsout:0, gapsin:0
-windowrule = match:float false, match:workspace w[tv1], border_size 0
-windowrule = match:float false, match:workspace w[tv1], rounding 0
-windowrule = match:float false, match:workspace f[1], border_size 0
-windowrule = match:float false, match:workspace f[1], rounding 0
+windowrule = border_size 0, match:float 0, match:workspace w[tv1]
+windowrule = rounding 0, match:float 0, match:workspace w[tv1]
+windowrule = border_size 0, match:float 0, match:workspace f[1]
+windowrule = rounding 0, match:float 0, match:workspace f[1]
 ```
 
 #### Smart gaps (ignoring special workspaces)
@@ -80,27 +84,27 @@ You can combine workspace selectors for more fine-grained control, for example, 
 ```
 workspace = w[tv1]s[false], gapsout:0, gapsin:0
 workspace = f[1]s[false], gapsout:0, gapsin:0
-windowrule = match:float false, match:workspace w[tv1]s[false], border_size 0
-windowrule = match:float false, match:workspace w[tv1]s[false], rounding 0
-windowrule = match:float false, match:workspace f[1]s[false], border_size 0
-windowrule = match:float false, match:workspace f[1]s[false], rounding 0
+windowrule = border_size 0, match:float 0, match:workspace w[tv1]s[false]
+windowrule = rounding 0, match:float 0, match:workspace w[tv1]s[false]
+windowrule = border_size 0, match:float 0, match:workspace f[1]s[false]
+windowrule = rounding 0, match:float 0, match:workspace f[1]s[false]
 ```
 
 ## Rules
 
 | Rule | Description | type |
 | --- | --- | --- |
-| monitor:[m] | Binds a workspace to a monitor. See [syntax](https://wiki.hypr.land/Configuring/Workspace-Rules#syntax) and [Monitors](https://wiki.hypr.land/Monitors). | string |
+| monitor:[m] | Binds a workspace to a monitor. See [syntax](https://wiki.hypr.land/Configuring/Workspace-Rules/#syntax) and [Monitors](https://wiki.hypr.land/Configuring/Monitors). | string |
 | default:[b] | Whether this workspace should be the default workspace for the given monitor | bool |
-| gapsin:[x] | Set the gaps between windows (equivalent to [General->gaps\_in](https://wiki.hypr.land/Variables#general)) | int |
-| gapsout:[x] | Set the gaps between windows and monitor edges (equivalent to [General->gaps\_out](https://wiki.hypr.land/Variables#general)) | int |
-| bordersize:[x] | Set the border size around windows (equivalent to [General->border\_size](https://wiki.hypr.land/Variables#general)) | int |
+| gapsin:[x] | Set the gaps between windows (equivalent to [General->gaps\_in](https://wiki.hypr.land/Configuring/Variables#general)) | int |
+| gapsout:[x] | Set the gaps between windows and monitor edges (equivalent to [General->gaps\_out](https://wiki.hypr.land/Configuring/Variables#general)) | int |
+| bordersize:[x] | Set the border size around windows (equivalent to [General->border\_size](https://wiki.hypr.land/Configuring/Variables#general)) | int |
 | border:[b] | Whether to draw borders or not | bool |
 | shadow:[b] | Whether to draw shadows or not | bool |
 | rounding:[b] | Whether to draw rounded windows or not | bool |
 | decorate:[b] | Whether to draw window decorations or not | bool |
 | persistent:[b] | Keep this workspace alive even if empty and inactive | bool |
-| on-created-empty:[c] | A command to be executed once a workspace is created empty (i.e. not created by moving a window to it). See the [command syntax](https://wiki.hypr.land/Dispatchers#executing-with-rules) | string |
+| on-created-empty:[c] | A command to be executed once a workspace is created empty (i.e. not created by moving a window to it). See the [command syntax](https://wiki.hypr.land/Configuring/Dispatchers#executing-with-rules) | string |
 | defaultName:[s] | A default name for the workspace. | string |
 
 ### Example Rules
@@ -114,3 +118,7 @@ workspace = name:gaming, monitor:desc:Chimei Innolux Corporation 0x150C, default
 workspace = 5, on-created-empty:[float] firefox
 workspace = special:scratchpad, on-created-empty:foot
 ```
+
+Last updated on January 8, 2026
+
+[Window Rules](https://wiki.hypr.land/Configuring/Window-Rules/ "Window Rules")[Animations](https://wiki.hypr.land/Configuring/Animations/ "Animations")

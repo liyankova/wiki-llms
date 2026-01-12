@@ -6,6 +6,10 @@ source_domain: wiki.hypr.land
 
 # Expanding functionality – Hyprland Wiki
 
+[Configuring](https://wiki.hypr.land/Configuring/)
+
+Expanding functionality
+
 # Expanding functionality
 
 Hyprland exposes two powerful sockets for you to use.
@@ -36,3 +40,7 @@ function handle {
 
 socat - "UNIX-CONNECT:$XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock" | while read -r line; do handle "$line"; done
 ```
+
+Last updated on January 8, 2026
+
+[Using hyprctl](https://wiki.hypr.land/Configuring/Using-hyprctl/ "Using hyprctl")[XWayland](https://wiki.hypr.land/Configuring/XWayland/ "XWayland")

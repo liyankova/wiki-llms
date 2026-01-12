@@ -1,10 +1,16 @@
 ---
-url: https://wiki.hypr.land/Hypr-Ecosystem/hyprtoolkit/development
+url: https://wiki.hypr.land/Hypr-Ecosystem/hyprtoolkit/development/
 title: Development – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
 # Development – Hyprland Wiki
+
+[Hypr Ecosystem](https://wiki.hypr.land/Hypr-Ecosystem/)
+
+[hyprtoolkit](https://wiki.hypr.land/Hypr-Ecosystem/hyprtoolkit/)
+
+Development
 
 # Development
 
@@ -146,3 +152,5 @@ You cannot edit the layout from another thread.
 For this, use `CBackend::addFd()` to add a FD to the loop alongside a function that will be called once the fd
 is readable.  
 This function will be called from the main thread, so you can do whatever you want in there.
+
+Last updated on January 8, 2026

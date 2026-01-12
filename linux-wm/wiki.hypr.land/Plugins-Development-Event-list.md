@@ -1,10 +1,16 @@
 ---
-url: https://wiki.hypr.land/Plugins/Development/Event-list
+url: https://wiki.hypr.land/Plugins/Development/Event-list/
 title: Event list – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
 # Event list – Hyprland Wiki
+
+[Plugins](https://wiki.hypr.land/Plugins/)
+
+[Development](https://wiki.hypr.land/Plugins/Development/)
+
+Event list
 
 # Event list
 
@@ -58,3 +64,7 @@ Note
 | swipeBegin | emitted when a touchpad swipe is commenced | `IPointer::SSwipeBeginEvent` | ✔ |
 | swipeUpdate | emitted when a touchpad swipe is updated | `IPointer::SSwipeUpdateEvent` | ✔ |
 | swipeEnd | emitted when a touchpad swipe is ended | `IPointer::SSwipeEndEvent` | ✔ |
+
+Last updated on January 8, 2026
+
+[Plugin guidelines](https://wiki.hypr.land/Plugins/Development/Plugin-Guidelines/ "Plugin guidelines")[Advanced](https://wiki.hypr.land/Plugins/Development/Advanced/ "Advanced")

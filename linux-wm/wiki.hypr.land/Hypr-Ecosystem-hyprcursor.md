@@ -1,10 +1,14 @@
 ---
-url: https://wiki.hypr.land/Hypr-Ecosystem/hyprcursor
+url: https://wiki.hypr.land/Hypr-Ecosystem/hyprcursor/
 title: hyprcursor – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
 # hyprcursor – Hyprland Wiki
+
+[Hypr Ecosystem](https://wiki.hypr.land/Hypr-Ecosystem/)
+
+hyprcursor
 
 # hyprcursor
 
@@ -83,3 +87,7 @@ whatever you define with `XCURSOR_THEME` and `XCURSOR_SIZE`.
 ## My Cursor Is a hyprland Icon?
 
 See [FAQ](https://wiki.hypr.land/FAQ)
+
+Last updated on January 8, 2026
+
+[hyprshutdown](https://wiki.hypr.land/Hypr-Ecosystem/hyprshutdown/ "hyprshutdown")[hyprutils](https://wiki.hypr.land/Hypr-Ecosystem/hyprutils/ "hyprutils")

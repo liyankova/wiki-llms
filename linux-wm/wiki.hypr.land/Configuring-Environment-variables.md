@@ -1,10 +1,14 @@
 ---
-url: https://wiki.hypr.land/Configuring/Environment-variables
+url: https://wiki.hypr.land/Configuring/Environment-variables/
 title: Environment variables – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
 # Environment variables – Hyprland Wiki
+
+[Configuring](https://wiki.hypr.land/Configuring/)
+
+Environment variables
 
 # Environment variables
 
@@ -151,3 +155,7 @@ To force GBM as a backend, set the following environment variables:
   readable by your user.
 * `XCURSOR_SIZE` - Set cursor size. See [here](https://wiki.hypr.land/FAQ/) for why you might
   want this variable set.
+
+Last updated on January 8, 2026
+
+[XWayland](https://wiki.hypr.land/Configuring/XWayland/ "XWayland")[Multi-GPU](https://wiki.hypr.land/Configuring/Multi-GPU/ "Multi-GPU")

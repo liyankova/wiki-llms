@@ -1,10 +1,16 @@
 ---
-url: https://wiki.hypr.land/Plugins/Development/Advanced
+url: https://wiki.hypr.land/Plugins/Development/Advanced/
 title: Advanced – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
 # Advanced – Hyprland Wiki
+
+[Plugins](https://wiki.hypr.land/Plugins/)
+
+[Development](https://wiki.hypr.land/Plugins/Development/)
+
+Advanced
 
 # Advanced
 
@@ -154,3 +160,7 @@ Read the API at `src/plugins/PluginAPI.hpp`, check out the
 [official plugins](https://github.com/hyprwm/hyprland-plugins).
 
 And, most importantly, have fun!
+
+Last updated on January 8, 2026
+
+[Event list](https://wiki.hypr.land/Plugins/Development/Event-list/ "Event list")

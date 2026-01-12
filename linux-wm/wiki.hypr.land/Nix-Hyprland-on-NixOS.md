@@ -1,10 +1,14 @@
 ---
-url: https://wiki.hypr.land/Nix/Hyprland-on-NixOS
+url: https://wiki.hypr.land/Nix/Hyprland-on-NixOS/
 title: Hyprland on NixOS – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
 # Hyprland on NixOS – Hyprland Wiki
+
+[Nix](https://wiki.hypr.land/Nix/)
+
+Hyprland on NixOS
 
 # Hyprland on NixOS
 
@@ -53,7 +57,7 @@ This will use the Hyprland version included in the Nixpkgs release you’re usin
 
 Note
 
-If you don’t want to compile Hyprland yourself, make sure to enable [Cachix](https://wiki.hypr.land/Cachix).
+If you don’t want to compile Hyprland yourself, make sure to enable [Cachix](https://wiki.hypr.land/Nix/Cachix).
 
 In case you want to use the *development* version of Hyprland, you can add it like
 this:
@@ -119,7 +123,7 @@ For more details, see
 
 Note
 
-If you don’t want to compile Hyprland yourself, make sure to enable [Cachix](https://wiki.hypr.land/Cachix).
+If you don’t want to compile Hyprland yourself, make sure to enable [Cachix](https://wiki.hypr.land/Nix/Cachix).
 
 configuration.nix
 
@@ -144,7 +148,7 @@ in {
 ## Fixing problems with themes
 
 If your themes for your mouse cursors, icons or windows don’t load correctly, see the
-relevant section in [Hyprland on Home Manager](https://wiki.hypr.land/Hyprland-on-Home-Manager).
+relevant section in [Hyprland on Home Manager](https://wiki.hypr.land/Nix/Hyprland-on-Home-Manager).
 
 If you prefer not to use Home Manager, you can also resolve the issues with GTK
 themes using dconf like so:
@@ -170,7 +174,7 @@ configuration.nix
 ## Upstream module
 
 The [upstream module](https://github.com/hyprwm/Hyprland/blob/main/nix/module.nix)
-provides options similar to the ones in the [Home Manager module](https://wiki.hypr.land/Hyprland-on-Home-Manager).
+provides options similar to the ones in the [Home Manager module](https://wiki.hypr.land/Nix/Hyprland-on-Home-Manager).
 
 To use it, simply add
 
@@ -189,3 +193,7 @@ To use it, simply add
   };
 }
 ```
+
+Last updated on January 8, 2026
+
+[Hyprland on Home Manager](https://wiki.hypr.land/Nix/Hyprland-on-Home-Manager/ "Hyprland on Home Manager")

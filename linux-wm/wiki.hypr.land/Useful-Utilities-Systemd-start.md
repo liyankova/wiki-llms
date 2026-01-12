@@ -1,10 +1,14 @@
 ---
-url: https://wiki.hypr.land/Useful-Utilities/Systemd-start
+url: https://wiki.hypr.land/Useful-Utilities/Systemd-start/
 title: Systemd startup – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
 # Systemd startup – Hyprland Wiki
+
+[Useful Utilities](https://wiki.hypr.land/Useful-Utilities/)
+
+Systemd startup
 
 # Systemd startup
 
@@ -72,13 +76,13 @@ If you want to bypass compositor selection menu and launch Hyprland directly, us
 
 ```
 if uwsm check may-start; then
-    exec uwsm start hyprland-uwsm.desktop
+    exec uwsm start hyprland.desktop
 fi
 ```
 
 ### Using a display manager
 
-If you use a display manager, choose `hyprland (uwsm-managed)` entry in a display manager selection menu.
+If you use a display manager, choose `Hyprland (uwsm-managed)` entry in a display manager selection menu.
 
 ## Launching applications inside session
 
@@ -93,6 +97,12 @@ exec-once = uwsm app -- mycommand --arg1 --arg2
 bind = SUPER, E, exec, uwsm app -- pcmanfm-qt.desktop
 ```
 
+Faster alternatives are:
+
+* `uwsm-app`: a shell client working with on-demand daemon, optional part of uwsm.
+* `app2unit`: ([link](https://github.com/Vladimir-csp/app2unit)), pure shell alternative, file opener, usually ahead on features.
+* `runapp`: ([link](https://github.com/c4rlo/runapp/)), C++ alternative, even faster, features may vary.
+
 ## Autostart
 
 XDG Autostart is handled by systemd, and its target is activated in uwsm-managed session automatically.
@@ -100,3 +110,7 @@ XDG Autostart is handled by systemd, and its target is activated in uwsm-managed
 Some applications provide native systemd user units to be autostarted with. Those might need to be enabled explicitly via `systemctl --user enable [some-app.service]`. Or, in case the unit is missing `[Install]` section, enabled more directly: `systemctl --user add-wants graphical-session.target [some-app.service]`. Also ensure the unit has `After=graphical-session.target` ordering (it can be added via drop-in).
 
 More autostart-related examples and tricks can be found [here](https://github.com/Vladimir-csp/uwsm/tree/master/example-units).
+
+Last updated on January 8, 2026
+
+[Hypr Ecosystem](https://wiki.hypr.land/Useful-Utilities/Hypr-Ecosystem/ "Hypr Ecosystem")

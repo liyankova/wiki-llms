@@ -1,10 +1,14 @@
 ---
-url: https://wiki.hypr.land/Hypr-Ecosystem/xdg-desktop-portal-hyprland
+url: https://wiki.hypr.land/Hypr-Ecosystem/xdg-desktop-portal-hyprland/
 title: xdg-desktop-portal-hyprland – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
 # xdg-desktop-portal-hyprland – Hyprland Wiki
+
+[Hypr Ecosystem](https://wiki.hypr.land/Hypr-Ecosystem/)
+
+xdg-desktop-portal-hyprland
 
 # xdg-desktop-portal-hyprland
 
@@ -179,3 +183,7 @@ Config file `~/.config/hypr/xdph.conf` allows for these variables:
 | `max_fps` | Maximum fps of a screensharing session. `0` means no limit. | int | `120` |
 | `allow_token_by_default` | If enabled, will tick the “Allow restore token” box by default. | bool | `false` |
 | `custom_picker_binary` | If non-empty, will use that **binary** as your share picker. Please note that it has to conform to the stdout selection layout of `hyprland-share-picker`. | string | `"hyprland-share-picker"` |
+
+Last updated on January 8, 2026
+
+[hyprlock](https://wiki.hypr.land/Hypr-Ecosystem/hyprlock/ "hyprlock")[hyprsysteminfo](https://wiki.hypr.land/Hypr-Ecosystem/hyprsysteminfo/ "hyprsysteminfo")

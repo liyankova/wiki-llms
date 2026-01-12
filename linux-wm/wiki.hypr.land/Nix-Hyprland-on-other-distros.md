@@ -6,6 +6,10 @@ source_domain: wiki.hypr.land
 
 # Hyprland on Other Distros – Hyprland Wiki
 
+[Nix](https://wiki.hypr.land/Nix/)
+
+Hyprland on Other Distros
+
 # Hyprland on Other Distros
 
 If you use Nix on distros other than NixOS, you can still use Hyprland.  
@@ -62,3 +66,7 @@ nix profile upgrade '.*'
 Check the
 [nix profile](https://nixos.org/manual/nix/stable/command-ref/new-cli/nix3-profile.html)
 command documentation for other upgrade options.
+
+Last updated on January 8, 2026
+
+[Cachix](https://wiki.hypr.land/Nix/Cachix/ "Cachix")[Options & Overrides](https://wiki.hypr.land/Nix/Options-Overrides/ "Options & Overrides")

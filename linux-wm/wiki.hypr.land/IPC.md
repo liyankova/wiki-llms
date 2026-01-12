@@ -6,6 +6,8 @@ source_domain: wiki.hypr.land
 
 # IPC – Hyprland Wiki
 
+IPC
+
 # IPC
 
 Hyprland exposes 2 UNIX Sockets, for controlling / getting info about Hyprland
@@ -102,3 +104,5 @@ handle() {
 
 socat -U - UNIX-CONNECT:$XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock | while read -r line; do handle "$line"; done
 ```
+
+Last updated on January 8, 2026

@@ -1,10 +1,14 @@
 ---
-url: https://wiki.hypr.land/Useful-Utilities/Status-Bars
+url: https://wiki.hypr.land/Useful-Utilities/Status-Bars/
 title: Status bars – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
 # Status bars – Hyprland Wiki
+
+[Useful Utilities](https://wiki.hypr.land/Useful-Utilities/)
+
+Status bars
 
 # Status bars
 
@@ -318,3 +322,7 @@ Use the `blur` and `ignore_alpha` [layer rules](https://wiki.hypr.land/Configuri
 The former enables blur, and the latter makes it ignore insufficiently opaque regions.
 Ideally, the value used with `ignore_alpha` is higher than the shadow opacity and lower than the bar/menu content’s opacity.
 Additionally, if it has transparent popups, you can use the `blur_popups` rule.
+
+Last updated on January 8, 2026
+
+[Must have](https://wiki.hypr.land/Useful-Utilities/Must-have/ "Must have")[Wallpapers](https://wiki.hypr.land/Useful-Utilities/Wallpapers/ "Wallpapers")

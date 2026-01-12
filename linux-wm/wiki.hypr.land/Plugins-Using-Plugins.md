@@ -1,10 +1,14 @@
 ---
-url: https://wiki.hypr.land/Plugins/Using-Plugins
+url: https://wiki.hypr.land/Plugins/Using-Plugins/
 title: Using plugins – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
 # Using plugins – Hyprland Wiki
+
+[Plugins](https://wiki.hypr.land/Plugins/)
+
+Using plugins
 
 # Using plugins
 
@@ -31,7 +35,7 @@ you will have to find yourself.
 ## Installing / Using plugins
 
 It is *highly* recommended you use the Hyprland Plugin Manager, `hyprpm`. For
-manual instructions, see [here](https://wiki.hypr.land/Plugins/Using-Plugins#manual).
+manual instructions, see [here](https://wiki.hypr.land/Plugins/Using-Plugins/#manual).
 
 ### hyprpm
 
@@ -105,7 +109,7 @@ Oh no. Oopsie. Usually means a plugin is broken. `hyprpm disable` it.
 
 ### How do I make my own plugin?
 
-See [here](https://wiki.hypr.land/Development/Getting-Started).
+See [here](https://wiki.hypr.land/Plugins/Development/Getting-Started).
 
 ### Where do I find plugins?
 
@@ -126,3 +130,5 @@ nothing bad going on, they will be safe.
 Hyprland employs a few tactics to unload plugins that crash. However, those
 tactics may not always work. In general, as long as the plugin is well-designed,
 it should not affect the stability of Hyprland.
+
+Last updated on January 8, 2026

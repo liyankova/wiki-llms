@@ -6,6 +6,8 @@ source_domain: wiki.hypr.land
 
 # Contributing and Debugging – Hyprland Wiki
 
+Contributing and Debugging
+
 # Contributing and Debugging
 
 PR, code styling and code FAQs are [here](https://wiki.hypr.land/Contributing-and-Debugging/PR-Guidelines)
@@ -115,3 +117,5 @@ for live logs. (replace `hyprland` with `hyprlandd` for debug builds)
 
 See
 [`ISSUE_GUIDELINES.md`](https://github.com/hyprwm/Hyprland/blob/main/docs/ISSUE_GUIDELINES.md).
+
+Last updated on January 8, 2026

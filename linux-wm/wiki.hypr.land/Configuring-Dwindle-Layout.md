@@ -6,6 +6,10 @@ source_domain: wiki.hypr.land
 
 # Dwindle Layout – Hyprland Wiki
 
+[Configuring](https://wiki.hypr.land/Configuring/)
+
+Dwindle Layout
+
 # Dwindle Layout
 
 Dwindle is a BSPWM-like layout, where every window on a workspace is a member of
@@ -60,3 +64,7 @@ e.g.:
 ```
 bind = SUPER, A, layoutmsg, preselect l
 ```
+
+Last updated on January 8, 2026
+
+[Tearing](https://wiki.hypr.land/Configuring/Tearing/ "Tearing")[Master Layout](https://wiki.hypr.land/Configuring/Master-Layout/ "Master Layout")

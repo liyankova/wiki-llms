@@ -6,6 +6,10 @@ source_domain: wiki.hypr.land
 
 # Contributing and Debugging – Hyprland Wiki
 
+[Nix](https://wiki.hypr.land/Nix/)
+
+Contributing and Debugging
+
 # Contributing and Debugging
 
 Everything needed to build and debug Hyprland and other hyprwm programs is
@@ -84,3 +88,7 @@ mesonConfigurePhase # to run the Meson configure phase
 ninjaBuildPhase     # to run the Ninja build phase
 mesonInstallPhase   # to run the Meson install phase
 ```
+
+Last updated on January 8, 2026
+
+[Plugins](https://wiki.hypr.land/Nix/Plugins/ "Plugins")

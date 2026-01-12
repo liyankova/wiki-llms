@@ -6,6 +6,10 @@ source_domain: wiki.hypr.land
 
 # Translations – Hyprland Wiki
 
+[Contributing and Debugging](https://wiki.hypr.land/Contributing-and-Debugging/)
+
+Translations
+
 # Translations
 
 Some parts of the Hyprland ecosystem are localized. More and more are getting localization
@@ -73,3 +77,7 @@ Order of fallbacks is as follows:
 
 So, if you write something for `de_DE`, and the user has `de_AT`, if `de_AT` is missing,
 `de_DE` will be used.
+
+Last updated on January 8, 2026
+
+[Tests](https://wiki.hypr.land/Contributing-and-Debugging/Tests/ "Tests")

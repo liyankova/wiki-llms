@@ -1,10 +1,14 @@
 ---
-url: https://wiki.hypr.land/Configuring/Master-Layout
+url: https://wiki.hypr.land/Configuring/Master-Layout/
 title: Master Layout – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
 # Master Layout – Hyprland Wiki
+
+[Configuring](https://wiki.hypr.land/Configuring/)
+
+Master Layout
 
 # Master Layout
 
@@ -28,7 +32,6 @@ than the default left/right split.
 | new\_on\_top | whether a newly open window should be on the top of the stack | bool | false |
 | new\_on\_active | `before`, `after`: place new window relative to the focused window; `none`: place new window according to the value of `new_on_top`. | string | `none` |
 | orientation | default placement of the master area, can be left, right, top, bottom or center | string | left |
-| inherit\_fullscreen | inherit fullscreen status when cycling/swapping to another window (e.g. monocle layout) | bool | true |
 | slave\_count\_for\_center\_master | when using orientation=center, make the master window centered only when at least this many slave windows are open. (Set 0 to always\_center\_master) | int | 2 |
 | center\_master\_fallback | Set fallback for center master when slaves are less than slave\_count\_for\_center\_master, can be left ,right ,top ,bottom | string | left |
 | smart\_resizing | if enabled, resizing direction will be determined by the mouse’s position on the window (nearest to which corner). Else, it is based on the window’s tiling position. | bool | true |
@@ -79,10 +82,14 @@ bind = MOD, KEY, layoutmsg, swapwithmaster master
 
 | rule | description | type |
 | --- | --- | --- |
-| orientation:[o] | Sets the orientation of a workspace. For available orientations, see [Config->orientation](https://wiki.hypr.land/Configuring/Master-Layout#config) | string |
+| orientation:[o] | Sets the orientation of a workspace. For available orientations, see [Config->orientation](https://wiki.hypr.land/Configuring/Master-Layout/#config) | string |
 
 Example usage:
 
 ```
 workspace = 2, layoutopt:orientation:top
 ```
+
+Last updated on January 8, 2026
+
+[Dwindle Layout](https://wiki.hypr.land/Configuring/Dwindle-Layout/ "Dwindle Layout")[Permissions](https://wiki.hypr.land/Configuring/Permissions/ "Permissions")

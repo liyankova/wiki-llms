@@ -1,10 +1,14 @@
 ---
-url: https://wiki.hypr.land/Useful-Utilities/File-Managers
+url: https://wiki.hypr.land/Useful-Utilities/File-Managers/
 title: File Managers – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
 # File Managers – Hyprland Wiki
+
+[Useful Utilities](https://wiki.hypr.land/Useful-Utilities/)
+
+File Managers
 
 # File Managers
 
@@ -29,3 +33,7 @@ source_domain: wiki.hypr.land
 * [ranger](https://github.com/ranger/ranger): A VIM-inspired filemanager for the console.
 * [superfile](https://github.com/yorukot/superfile): Pretty fancy and modern terminal file manager.
 * [yazi](https://yazi-rs.github.io/): Blazing fast terminal file manager written in Rust, based on async I/O.
+
+Last updated on January 8, 2026
+
+[Clipboard Managers](https://wiki.hypr.land/Useful-Utilities/Clipboard-Managers/ "Clipboard Managers")[Other](https://wiki.hypr.land/Useful-Utilities/Other/ "Other")

@@ -6,6 +6,8 @@ source_domain: wiki.hypr.land
 
 # Connect – Hyprland Wiki
 
+Connect
+
 # Connect
 
 These are the links to official Hyprland-related spaces or profiles:
@@ -23,3 +25,5 @@ Matrix: `#hyprland:matrix.vaxry.net`
 
 hyprland.org git instance: [code.hyprland.org](https://code.hyprland.org/)  
 Hyprland website: [hyprland.org](https://hyprland.org/)
+
+Last updated on January 8, 2026

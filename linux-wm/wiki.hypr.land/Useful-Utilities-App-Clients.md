@@ -1,10 +1,14 @@
 ---
-url: https://wiki.hypr.land/Useful-Utilities/App-Clients
+url: https://wiki.hypr.land/Useful-Utilities/App-Clients/
 title: App clients – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
 # App clients – Hyprland Wiki
+
+[Useful Utilities](https://wiki.hypr.land/Useful-Utilities/)
+
+App clients
 
 # App clients
 
@@ -28,3 +32,7 @@ replacements for them:
 GTK4. Much like Discord, Element is known to have a lot of problems as a result
 of being based on Electron. Fractal currently doesn’t support VoIP calling, but
 all other features are supported, including E2EE and cross-device verification.
+
+Last updated on January 8, 2026
+
+[App launchers](https://wiki.hypr.land/Useful-Utilities/App-Launchers/ "App launchers")[Color pickers](https://wiki.hypr.land/Useful-Utilities/Color-Pickers/ "Color pickers")

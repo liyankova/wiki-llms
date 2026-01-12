@@ -32,3 +32,5 @@ Wayland **compositors** should not be confused with Xorg **window managers**.
 If you are having issues, please try [reading the FAQ](https://wiki.hypr.land/FAQ) and configuring
 sections — chances are your issue is described somewhere there. If not, you can
 try [searching the issues](https://github.com/hyprwm/Hyprland/issues).
+
+Last updated on January 8, 2026

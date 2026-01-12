@@ -1,10 +1,14 @@
 ---
-url: https://wiki.hypr.land/Configuring/Keywords
+url: https://wiki.hypr.land/Configuring/Keywords/
 title: Keywords – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
 # Keywords – Hyprland Wiki
+
+[Configuring](https://wiki.hypr.land/Configuring/)
+
+Keywords
 
 # Keywords
 
@@ -35,11 +39,11 @@ You can execute a shell script on:
 * every time the config is reloaded.
 * shutdown of the compositor
 
-`exec-once = command` will execute only on launch ([support rules](https://wiki.hypr.land/Dispatchers/#executing-with-rules))
+`exec-once = command` will execute only on launch ([support rules](https://wiki.hypr.land/Configuring/Dispatchers/#executing-with-rules))
 
 `execr-once = command` will execute only on launch
 
-`exec = command` will execute on each reload ([support rules](https://wiki.hypr.land/Dispatchers/#executing-with-rules))
+`exec = command` will execute on each reload ([support rules](https://wiki.hypr.land/Configuring/Dispatchers/#executing-with-rules))
 
 `execr = command` will execute on each reload
 
@@ -65,7 +69,7 @@ then lines inside `~/.config/hypr/myColors.conf`, then lines below.
 
 Use [libinput-gestures](https://github.com/bulletmark/libinput-gestures) with
 `hyprctl` if you want to expand Hyprland’s gestures beyond what’s offered in
-[Variables](https://wiki.hypr.land/Variables).
+[Variables](https://wiki.hypr.land/Configuring/Variables).
 
 ## Per-device input configs
 
@@ -184,3 +188,7 @@ and ***NOT***
 ```
 env = QT_QPA_PLATFORM,"wayland"
 ```
+
+Last updated on January 8, 2026
+
+[Variables](https://wiki.hypr.land/Configuring/Variables/ "Variables")[Monitors](https://wiki.hypr.land/Configuring/Monitors/ "Monitors")

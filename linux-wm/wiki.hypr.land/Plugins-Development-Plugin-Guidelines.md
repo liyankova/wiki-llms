@@ -1,10 +1,16 @@
 ---
-url: https://wiki.hypr.land/Plugins/Development/Plugin-Guidelines
+url: https://wiki.hypr.land/Plugins/Development/Plugin-Guidelines/
 title: Plugin guidelines – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
 # Plugin guidelines – Hyprland Wiki
+
+[Plugins](https://wiki.hypr.land/Plugins/)
+
+[Development](https://wiki.hypr.land/Plugins/Development/)
+
+Plugin guidelines
 
 # Plugin guidelines
 
@@ -37,7 +43,7 @@ commit_pins = [
 ```
 
 `name` and `authors` are required. `commit_pins` are optional. See
-[commit pins](https://wiki.hypr.land/Plugins/Development/Plugin-Guidelines#commit-pins) for more info.
+[commit pins](https://wiki.hypr.land/Plugins/Development/Plugin-Guidelines/#commit-pins) for more info.
 
 ### Plugins
 
@@ -110,3 +116,7 @@ Always prefer using Event Hooks.
 The Wayland event loop is strictly single-threaded. It is not recommended to
 create threads in your code, unless they are fully detached from the Hyprland
 process. (e.g. saving a file)
+
+Last updated on January 8, 2026
+
+[Getting started](https://wiki.hypr.land/Plugins/Development/Getting-Started/ "Getting started")[Event list](https://wiki.hypr.land/Plugins/Development/Event-list/ "Event list")

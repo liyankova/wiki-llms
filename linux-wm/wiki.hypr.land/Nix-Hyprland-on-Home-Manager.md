@@ -1,10 +1,14 @@
 ---
-url: https://wiki.hypr.land/Nix/Hyprland-on-Home-Manager
+url: https://wiki.hypr.land/Nix/Hyprland-on-Home-Manager/
 title: Hyprland on Home Manager – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
 # Hyprland on Home Manager – Hyprland Wiki
+
+[Nix](https://wiki.hypr.land/Nix/)
+
+Hyprland on Home Manager
 
 # Hyprland on Home Manager
 
@@ -159,7 +163,7 @@ home.nix
 ```
 
 For examples on how to build Hyprland plugins using Nix, see the
-[Nix/Plugins](https://wiki.hypr.land/Plugins) page.
+[Nix/Plugins](https://wiki.hypr.land/Nix/Plugins) page.
 
 ## FAQ
 
@@ -266,3 +270,7 @@ home.nix
   xdg.configFile."uwsm/env".source = "${config.home.sessionVariablesPackage}/etc/profile.d/hm-session-vars.sh"; 
 }
 ```
+
+Last updated on January 8, 2026
+
+[Hyprland on NixOS](https://wiki.hypr.land/Nix/Hyprland-on-NixOS/ "Hyprland on NixOS")[Cachix](https://wiki.hypr.land/Nix/Cachix/ "Cachix")

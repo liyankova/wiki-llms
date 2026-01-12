@@ -1,10 +1,14 @@
 ---
-url: https://wiki.hypr.land/Hypr-Ecosystem/hypridle
+url: https://wiki.hypr.land/Hypr-Ecosystem/hypridle/
 title: hypridle – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
 # hypridle – Hyprland Wiki
+
+[Hypr Ecosystem](https://wiki.hypr.land/Hypr-Ecosystem/)
+
+hypridle
 
 # hypridle
 
@@ -114,3 +118,7 @@ listener {
     on-timeout = systemctl suspend                # suspend pc
 }
 ```
+
+Last updated on January 8, 2026
+
+[hyprlauncher](https://wiki.hypr.land/Hypr-Ecosystem/hyprlauncher/ "hyprlauncher")[hyprlock](https://wiki.hypr.land/Hypr-Ecosystem/hyprlock/ "hyprlock")

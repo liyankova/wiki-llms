@@ -1,10 +1,14 @@
 ---
-url: https://wiki.hypr.land/Configuring/Monitors
+url: https://wiki.hypr.land/Configuring/Monitors/
 title: Monitors – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
 # Monitors – Hyprland Wiki
+
+[Configuring](https://wiki.hypr.land/Configuring/)
+
+Monitors
 
 # Monitors
 
@@ -170,7 +174,7 @@ Warning
 Disabling a monitor will literally remove it from the layout, moving all windows
 and workspaces to any remaining ones. If you want to disable your monitor in a
 screensaver style (just turn off the monitor) use the `dpms`
-[dispatcher](https://wiki.hypr.land/Dispatchers).
+[dispatcher](https://wiki.hypr.land/Configuring/Dispatchers).
 
 ## Custom reserved area
 
@@ -258,7 +262,7 @@ The default transfer function assumed to be in use on an SDR display for sRGB co
 ### VRR
 
 Per-display VRR can be done by adding `, vrr, X` where `X` is the mode from the
-[variables page](https://wiki.hypr.land/Variables).
+[variables page](https://wiki.hypr.land/Configuring/Variables).
 
 ## Rotating
 
@@ -302,8 +306,8 @@ EDID overrides and SDR → HDR settings:
 
 | name | description | type |
 | --- | --- | --- |
-| supports\_wide\_color | Force wide color gamut support (1 - force on, 0 - does nothing) | bool |
-| supports\_hdr | Force HDR support. Requires wide color gamut (1 - force on, 0 - does nothing) | bool |
+| supports\_wide\_color | Force wide color gamut support (0 - auto, 1 - force on, -1 - force off) | int |
+| supports\_hdr | Force HDR support. Requires wide color gamut (0 - auto, 1 - force on, -1 - force off) | int |
 | sdr\_min\_luminance | SDR minimum lumninace used for SDR → HDR mapping. Set to 0.005 for true black matching HDR black | float |
 | sdr\_max\_luminance | SDR maximum luminance. Can be used to adjust overall SDR → HDR brightness. 80 - 400 is a reasonable range. The desired value is likely between 200 and 250 | int |
 | min\_luminance | Monitor’s minimum luminance | float |
@@ -314,8 +318,12 @@ Note: those values might get passed to the monitor itself and cause increased bu
 
 ## Default workspace
 
-See [Workspace Rules](https://wiki.hypr.land/Workspace-Rules).
+See [Workspace Rules](https://wiki.hypr.land/Configuring/Workspace-Rules).
 
 ### Binding workspaces to a monitor
 
-See [Workspace Rules](https://wiki.hypr.land/Workspace-Rules).
+See [Workspace Rules](https://wiki.hypr.land/Configuring/Workspace-Rules).
+
+Last updated on January 8, 2026
+
+[Keywords](https://wiki.hypr.land/Configuring/Keywords/ "Keywords")[Binds](https://wiki.hypr.land/Configuring/Binds/ "Binds")

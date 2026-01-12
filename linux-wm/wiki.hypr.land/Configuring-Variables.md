@@ -1,18 +1,22 @@
 ---
-url: https://wiki.hypr.land/Configuring/Variables
+url: https://wiki.hypr.land/Configuring/Variables/
 title: Variables – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
 # Variables – Hyprland Wiki
 
+[Configuring](https://wiki.hypr.land/Configuring/)
+
+Variables
+
 # Variables
 
-For basic syntax info, see [Configuring Hyprland](https://wiki.hypr.land/).
+For basic syntax info, see [Configuring Hyprland](https://wiki.hypr.land/Configuring/).
 
 This page documents all the “options” of Hyprland. For binds, monitors,
 animations, etc. see the sidebar. For anything else, see
-[Keywords](https://wiki.hypr.land/Keywords).
+[Keywords](https://wiki.hypr.land/Configuring/Keywords).
 
 Please keep in mind some options that are layout-specific will be documented in
 the layout pages and not here. (See the Sidebar for Dwindle and Master layouts)
@@ -66,7 +70,7 @@ SHIFT CAPS CTRL/CONTROL ALT MOD2 MOD3 SUPER/WIN/LOGO/MOD4 MOD5
 | resize\_on\_border | enables resizing windows by clicking and dragging on borders and gaps | bool | false |
 | extend\_border\_grab\_area | extends the area around the border where you can click and drag on, only used when `general:resize_on_border` is on. | int | 15 |
 | hover\_icon\_on\_border | show a cursor icon when hovering over borders, only used when `general:resize_on_border` is on. | bool | true |
-| allow\_tearing | master switch for allowing tearing to occur. See [the Tearing page](https://wiki.hypr.land/Tearing). | bool | false |
+| allow\_tearing | master switch for allowing tearing to occur. See [the Tearing page](https://wiki.hypr.land/Configuring/Tearing). | bool | false |
 | resize\_corner | force floating windows to use a specific corner when being resized (1-4 going clockwise from top left, 0 to disable) | int | 0 |
 | modal\_parent\_blocking | whether parent windows of modals will be interactive | bool | true |
 | locale | overrides the system locale (e.g. en\_US, es) | str | [[Empty]] |
@@ -174,7 +178,7 @@ strain on the GPU.
 
 Note
 
-*[More about Animations](https://wiki.hypr.land/Animations).*
+*[More about Animations](https://wiki.hypr.land/Configuring/Animations).*
 
 ### Input
 
@@ -191,7 +195,7 @@ Note
 | repeat\_rate | The repeat rate for held-down keys, in repeats per second. | int | 25 |
 | repeat\_delay | Delay before a held-down key is repeated, in milliseconds. | int | 600 |
 | sensitivity | Sets the mouse input sensitivity. Value is clamped to the range -1.0 to 1.0. [libinput#pointer-acceleration](https://wayland.freedesktop.org/libinput/doc/latest/pointer-acceleration.html#pointer-acceleration) | float | 0.0 |
-| accel\_profile | Sets the cursor acceleration profile. Can be one of `adaptive`, `flat`. Can also be `custom`, see [below](https://wiki.hypr.land/Configuring/Variables#custom-accel-profiles). Leave empty to use `libinput`’s default mode for your input device. [libinput#pointer-acceleration](https://wayland.freedesktop.org/libinput/doc/latest/pointer-acceleration.html#pointer-acceleration) [adaptive/flat/custom] | str | [[Empty]] |
+| accel\_profile | Sets the cursor acceleration profile. Can be one of `adaptive`, `flat`. Can also be `custom`, see [below](https://wiki.hypr.land/Configuring/Variables/#custom-accel-profiles). Leave empty to use `libinput`’s default mode for your input device. [libinput#pointer-acceleration](https://wayland.freedesktop.org/libinput/doc/latest/pointer-acceleration.html#pointer-acceleration) [adaptive/flat/custom] | str | [[Empty]] |
 | force\_no\_accel | Force no cursor acceleration. This bypasses most of your pointer settings to get as raw of a signal as possible. **Enabling this is not recommended due to potential cursor desynchronization.** | bool | false |
 | rotation | Sets the rotation of a device in degrees clockwise off the logical neutral position. Value is clamped to the range 0 to 359. | int | 0 |
 | left\_handed | Switches RMB and LMB | bool | false |
@@ -199,7 +203,7 @@ Note
 | scroll\_method | Sets the scroll method. Can be one of `2fg` (2 fingers), `edge`, `on_button_down`, `no_scroll`. [libinput#scrolling](https://wayland.freedesktop.org/libinput/doc/latest/scrolling.html) [2fg/edge/on\_button\_down/no\_scroll] | str | [[Empty]] |
 | scroll\_button | Sets the scroll button. Has to be an int, cannot be a string. Check `wev` if you have any doubts regarding the ID. 0 means default. | int | 0 |
 | scroll\_button\_lock | If the scroll button lock is enabled, the button does not need to be held down. Pressing and releasing the button toggles the button lock, which logically holds the button down or releases it. While the button is logically held down, motion events are converted to scroll events. | bool | false |
-| scroll\_factor | Multiplier added to scroll movement for external mice. Note that there is a separate setting for [touchpad scroll\_factor](https://wiki.hypr.land/Configuring/Variables#touchpad). | float | 1.0 |
+| scroll\_factor | Multiplier added to scroll movement for external mice. Note that there is a separate setting for [touchpad scroll\_factor](https://wiki.hypr.land/Configuring/Variables/#touchpad). | float | 1.0 |
 | natural\_scroll | Inverts scrolling direction. When enabled, scrolling moves content directly, rather than manipulating a scrollbar. | bool | false |
 | follow\_mouse | Specify if and how cursor movement should affect window focus. See the note below. [0/1/2/3] | int | 1 |
 | follow\_mouse\_threshold | The smallest distance in logical pixels the mouse needs to travel for the window under it to get focused. Works only with follow\_mouse = 1. | float | 0.0 |
@@ -213,12 +217,12 @@ Note
 **XKB Settings**
 
 You can find a list of models, layouts, variants and options in
-[`/usr/share/X11/xkb/rules/base.lst`](file:///usr/share/X11/xkb/rules/base.lst).
+[`/usr/share/X11/xkb/rules/evdev.lst`](file:///usr/share/X11/xkb/rules/evdev.lst).
 Alternatively, you can use the `localectl` command to discover what is available
 on your system.
 
 For switchable keyboard configurations, take a look at
-[the uncommon tips & tricks page entry](https://wiki.hypr.land/Uncommon-tips--tricks/#switchable-keyboard-layouts).
+[the uncommon tips & tricks page entry](https://wiki.hypr.land/Configuring/Uncommon-tips--tricks/#switchable-keyboard-layouts).
 
 **Follow Mouse Cursor**
 
@@ -277,7 +281,7 @@ for more insights on how it works.
 
 | name | description | type | default |
 | --- | --- | --- | --- |
-| transform | Transform the input from touchdevices. The possible transformations are the same as [those of the monitors](https://wiki.hypr.land/Monitors/#rotating). `-1` means it’s unset. | int | -1 |
+| transform | Transform the input from touchdevices. The possible transformations are the same as [those of the monitors](https://wiki.hypr.land/Configuring/Monitors/#rotating). `-1` means it’s unset. | int | -1 |
 | output | The monitor to bind touch devices. The default is auto-detection. To stop auto-detection, use an empty string or the “[[Empty]]” value. | string | [[Auto]] |
 | enabled | Whether input is enabled for touch devices. | bool | true |
 
@@ -296,7 +300,7 @@ for more insights on how it works.
 
 | name | description | type | default |
 | --- | --- | --- | --- |
-| transform | transform the input from tablets. The possible transformations are the same as [those of the monitors](https://wiki.hypr.land/Monitors/#rotating). `-1` means it’s unset. | int | -1 |
+| transform | transform the input from tablets. The possible transformations are the same as [those of the monitors](https://wiki.hypr.land/Configuring/Monitors/#rotating). `-1` means it’s unset. | int | -1 |
 | output | the monitor to bind tablets. Can be `current` or a monitor name. Leave empty to map across all monitors. | string | [[Empty]] |
 | region\_position | position of the mapped region in monitor layout relative to the top left corner of the bound monitor or all monitors. | vec2 | [0, 0] |
 | absolute\_region\_position | whether to treat the `region_position` as an absolute position in monitor layout. Only applies when `output` is empty. | bool | false |
@@ -308,7 +312,7 @@ for more insights on how it works.
 
 ### Per-device input config
 
-Described [here](https://wiki.hypr.land/Keywords#per-device-input-configs).
+Described [here](https://wiki.hypr.land/Configuring/Keywords#per-device-input-configs).
 
 ### Gestures
 
@@ -333,7 +337,7 @@ Note
 
 `workspace_swipe`, `workspace_swipe_fingers` and `workspace_swipe_min_fingers` were removed in favor of the new gestures system.
 
-You can add this gesture config to replicate the swiping functionality with 3 fingers. See the [gestures](https://wiki.hypr.land/Gestures) page for more info.
+You can add this gesture config to replicate the swiping functionality with 3 fingers. See the [gestures](https://wiki.hypr.land/Configuring/Gestures) page for more info.
 
 ```
 gesture = 3, horizontal, workspace
@@ -345,7 +349,7 @@ gesture = 3, horizontal, workspace
 
 | name | description | type | default |
 | --- | --- | --- | --- |
-| auto\_group | whether new windows will be automatically grouped into the focused unlocked group. Note: if you want to disable auto\_group only for specific windows, use [the “group barred” window rule](https://wiki.hypr.land/Window-Rules/#group-window-rule-options) instead. | bool | true |
+| auto\_group | whether new windows will be automatically grouped into the focused unlocked group. Note: if you want to disable auto\_group only for specific windows, use [the “group barred” window rule](https://wiki.hypr.land/Configuring/Window-Rules/#group-window-rule-options) instead. | bool | true |
 | insert\_after\_current | whether new windows in a group spawn after current or at group tail | bool | true |
 | focus\_removed\_window | whether Hyprland should focus on the window that has just been moved out of the group | bool | true |
 | drag\_into\_group | whether dragging a window into a unlocked group will merge them. Options: 0 (disabled), 1 (enabled), 2 (only when dragging into the groupbar) | int | 1 |
@@ -377,9 +381,10 @@ gesture = 3, horizontal, workspace
 | priority | sets the decoration priority for groupbars | int | 3 |
 | render\_titles | whether to render titles in the group bar decoration | bool | true |
 | text\_offset | adjust vertical position for titles | int | 0 |
+| text\_padding | set horizontal padding for titles | int | 0 |
 | scrolling | whether scrolling in the groupbar changes group active window | bool | true |
 | rounding | how much to round the indicator | int | 1 |
-| rounding\_power | adjusts the curve used for rounding broupbar corners, larger is smoother, 2.0 is a circle, 4.0 is a squircle, 1.0 is a triangular corner. [1.0 - 10.0] | float | 2.0 |
+| rounding\_power | adjusts the curve used for rounding groupbar corners, larger is smoother, 2.0 is a circle, 4.0 is a squircle, 1.0 is a triangular corner. [1.0 - 10.0] | float | 2.0 |
 | gradient\_rounding | how much to round the gradients | int | 2 |
 | gradient\_rounding\_power | adjusts the curve used for rounding gradient corners, larger is smoother, 2.0 is a circle, 4.0 is a squircle, 1.0 is a triangular corner. [1.0 - 10.0] | float | 2.0 |
 | round\_only\_edges | round only the indicator edges of the entire groupbar | bool | true |
@@ -433,13 +438,14 @@ gesture = 3, horizontal, workspace
 | exit\_window\_retains\_fullscreen | if true, closing a fullscreen window makes the next focused window fullscreen | bool | false |
 | initial\_workspace\_tracking | if enabled, windows will open on the workspace they were invoked on. 0 - disabled, 1 - single-shot, 2 - persistent (all children too) | int | 1 |
 | middle\_click\_paste | whether to enable middle-click-paste (aka primary selection) | bool | true |
-| render\_unfocused\_fps | the maximum limit for render\_unfocused windows’ fps in the background (see also [Window-Rules](https://wiki.hypr.land/Window-Rules/#dynamic-effects) - `render_unfocused`) | int | 15 |
+| render\_unfocused\_fps | the maximum limit for render\_unfocused windows’ fps in the background (see also [Window-Rules](https://wiki.hypr.land/Configuring/Window-Rules/#dynamic-effects) - `render_unfocused`) | int | 15 |
 | disable\_xdg\_env\_checks | disable the warning if XDG environment is externally managed | bool | false |
 | disable\_hyprland\_qtutils\_check | disable the warning if hyprland-qtutils is not installed | bool | false |
 | lockdead\_screen\_delay | delay after which the “lockdead” screen will appear in case a lockscreen app fails to cover all the outputs (5 seconds max) | int | 1000 |
 | enable\_anr\_dialog | whether to enable the ANR (app not responding) dialog when your apps hang | bool | true |
 | anr\_missed\_pings | number of missed pings before showing the ANR dialog | int | 5 |
 | size\_limits\_tiled | whether to apply min\_size and max\_size rules to tiled windows | bool | false |
+| disable\_watchdog\_warning | whether to disable the warning about not using start-hyprland | bool | false |
 
 ### Binds
 
@@ -471,7 +477,7 @@ gesture = 3, horizontal, workspace
 | enabled | allow running applications using X11 | bool | true |
 | use\_nearest\_neighbor | uses the nearest neighbor filtering for xwayland apps, making them pixelated rather than blurry | bool | true |
 | force\_zero\_scaling | forces a scale of 1 on xwayland windows on scaled displays. | bool | false |
-| create\_abstract\_socket | Create the [abstract Unix domain socket](https://wiki.hypr.land/XWayland/#abstract-unix-domain-socket) for XWayland connections. (XWayland restart is required for changes to take effect; Linux only) | bool | false |
+| create\_abstract\_socket | Create the [abstract Unix domain socket](https://wiki.hypr.land/Configuring/XWayland/#abstract-unix-domain-socket) for XWayland connections. (XWayland restart is required for changes to take effect; Linux only) | bool | false |
 
 ### OpenGL
 
@@ -497,7 +503,7 @@ gesture = 3, horizontal, workspace
 | cm\_auto\_hdr | Auto-switch to HDR in fullscreen when needed. 0 - off, 1 - switch to `cm, hdr`, 2 - switch to `cm, hdredid` | int | 1 |
 | new\_render\_scheduling | Automatically uses triple buffering when needed, improves FPS on underpowered devices. | bool | false |
 | non\_shader\_cm | Enable CM without shader. 0 - disable, 1 - whenever possible, 2 - DS and passthrough only, 3 - disable and ignore CM issues | int | 3 |
-| cm\_sdr\_eotf | Default transfer function for displaying SDR apps. 0 - Treat unspecified as sRGB, 1 - Treat unspecified as Gamma 2.2, 2 - Treat unspecified and sRGB as Gamma 2.2 | int | 0 |
+| cm\_sdr\_eotf | Default transfer function for displaying SDR apps. 0 - Default (currently gamma22), 1 - Treat unspecified as Gamma 2.2, 2 - Treat unspecified and sRGB as Gamma 2.2, 3 - Treat unspecified as sRGB (previous default) | int | 0 |
 
 `cm_auto_hdr` requires `--target-colorspace-hint-mode=source` mpv option to work with mpv versions greater than v0.40.0
 
@@ -521,9 +527,11 @@ gesture = 3, horizontal, workspace
 | default\_monitor | the name of a default monitor for the cursor to be set to on startup (see `hyprctl monitors` for names) | str | [[EMPTY]] |
 | zoom\_factor | the factor to zoom by around the cursor. Like a magnifying glass. Minimum 1.0 (meaning no zoom) | float | 1.0 |
 | zoom\_rigid | whether the zoom should follow the cursor rigidly (cursor is always centered if it can be) or loosely | bool | false |
+| zoom\_detached\_camera | detach the camera from the mouse when zoomed in, only ever moving the camera to keep the mouse in view when it goes past the screen edges | bool | true |
 | enable\_hyprcursor | whether to enable hyprcursor support | bool | true |
 | hide\_on\_key\_press | Hides the cursor when you press any key until the mouse is moved. | bool | false |
 | hide\_on\_touch | Hides the cursor when the last input was a touch input until a mouse input is done. | bool | true |
+| hide\_on\_tablet | Hides the cursor when the last input was a tablet input until a mouse input is done. | bool | true |
 | use\_cpu\_buffer | Makes HW cursors use a CPU buffer. Required on Nvidia to have HW cursors. 0 - off, 1 - on, 2 - auto (nvidia only) | int | 2 |
 | warp\_back\_after\_non\_mouse\_input | Warp the cursor back to where it was after using a non-mouse input to move it, and then returning back to mouse. | bool | false |
 | zoom\_disable\_aa | disable antialiasing when zooming, which means things will be pixelated instead of blurry | bool | false |
@@ -536,33 +544,17 @@ gesture = 3, horizontal, workspace
 | --- | --- | --- | --- |
 | no\_update\_news | disable the popup that shows up when you update hyprland to a new version. | bool | false |
 | no\_donation\_nag | disable the popup that shows up twice a year encouraging to donate. | bool | false |
-| enforce\_permissions | whether to enable [permission control](https://wiki.hypr.land/Permissions). | bool | false |
+| enforce\_permissions | whether to enable [permission control](https://wiki.hypr.land/Configuring/Permissions). | bool | false |
 
-### Experimental
+### Quirks
 
-*Subcategory `experimental:`*
+*Subcategory `quirks:`*
 
 | name | description | type | default |
 | --- | --- | --- | --- |
-| xx\_color\_management\_v4 | enable color management protocol | bool | false |
+| prefer\_hdr | Report HDR mode as preferred. 0 - off, 1 - always, 2 - gamescope only | int | 0 |
 
-Since The release of `Mesa 25.1.1` settings below are no longer required, so just skip.
-
-Requires a client with `frog-color-management-v1` or `xx-color-management-v4` support like gamescope or <https://github.com/Zamundaaa/VK_hdr_layer>
-
-Steam:
-
-`DXVK_HDR=1 gamescope -f --hdr-enabled -- %command%`
-
-`ENABLE_HDR_WSI=1 DXVK_HDR=1 DISPLAY= %command%` (requires wayland-enabled proton version)
-
-Non-steam:
-
-`ENABLE_HDR_WSI=1 DXVK_HDR=1 DISPLAY= wine executable.exe`
-
-Video:
-
-`ENABLE_HDR_WSI=1 mpv --vo=gpu-next --target-colorspace-hint --gpu-api=vulkan --gpu-context=waylandvk "filename"`
+Some clients expect monitor to be in HDR mode prior to the client start. This breaks auto HDR activation and can cause whitescreen and flickering. Use `prefer_hdr` to fix it,
 
 ### Debug
 
@@ -594,3 +586,7 @@ Only for developers.
 
 There are more config options described in other pages, which are layout- or
 circumstance-specific. See the sidebar for more pages.
+
+Last updated on January 8, 2026
+
+[Start](https://wiki.hypr.land/Configuring/Start/ "Start")[Keywords](https://wiki.hypr.land/Configuring/Keywords/ "Keywords")

@@ -1,10 +1,12 @@
 ---
-url: https://wiki.hypr.land/Nix
+url: https://wiki.hypr.land/Nix/
 title: Nix – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
 # Nix – Hyprland Wiki
+
+Nix
 
 # Nix
 
@@ -38,13 +40,13 @@ configuration.nix
 }
 ```
 
-For other NixOS options, see [Hyprland on NixOS](https://wiki.hypr.land/Hyprland-on-NixOS).  
+For other NixOS options, see [Hyprland on NixOS](https://wiki.hypr.land/Nix/Hyprland-on-NixOS).  
 For additional options, see
 [module options](https://search.nixos.org/options?channel=unstable&from=0&size=50&sort=relevance&type=packages&query=hyprland).
 
 ## Home Manager module
 
-Read [Hyprland on Home Manager](https://wiki.hypr.land/Hyprland-on-Home-Manager).
+Read [Hyprland on Home Manager](https://wiki.hypr.land/Nix/Hyprland-on-Home-Manager).
 
 For the adventurous, [@spikespaz](https://github.com/spikespaz) has made a
 Hyprland module that can be used in Home Manager and NixOS. It can be found
@@ -52,4 +54,6 @@ Hyprland module that can be used in Home Manager and NixOS. It can be found
 
 ## Options and overrides
 
-Read [Options & Overrides](https://wiki.hypr.land/Options-Overrides).
+Read [Options & Overrides](https://wiki.hypr.land/Nix/Options-Overrides).
+
+Last updated on January 8, 2026

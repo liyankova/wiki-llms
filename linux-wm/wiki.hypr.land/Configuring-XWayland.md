@@ -1,10 +1,14 @@
 ---
-url: https://wiki.hypr.land/Configuring/XWayland
+url: https://wiki.hypr.land/Configuring/XWayland/
 title: XWayland – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
 # XWayland – Hyprland Wiki
+
+[Configuring](https://wiki.hypr.land/Configuring/)
+
+XWayland
 
 # XWayland
 
@@ -17,7 +21,7 @@ XWayland currently looks pixelated on HiDPI screens, due to Xorg’s inability t
 scale.
 
 This problem is mitigated by the
-[`xwayland:force_zero_scaling`](https://wiki.hypr.land/Variables/#xwayland) option,
+[`xwayland:force_zero_scaling`](https://wiki.hypr.land/Configuring/Variables/#xwayland) option,
 which forces XWayland windows not to be scaled.
 
 This will get rid of the pixelated look, but will not scale applications
@@ -53,8 +57,12 @@ for some kinds of sandboxes like Flatpak. However, removing the abstract socket
 has [potential](https://gitlab.gnome.org/GNOME/mutter/-/issues/1613) security
 and compatibility issues.
 
-Keeping that in mind, we add the [`xwayland:create_abstract_socket`](https://wiki.hypr.land/Variables/#xwayland) option.
+Keeping that in mind, we add the [`xwayland:create_abstract_socket`](https://wiki.hypr.land/Configuring/Variables/#xwayland) option.
 When the abstract socket is disabled, only the regular Unix domain
 socket will be created.
 
 *\* Abstract Unix domain sockets are available only on Linux-based systems*
+
+Last updated on January 8, 2026
+
+[Expanding functionality](https://wiki.hypr.land/Configuring/Expanding-functionality/ "Expanding functionality")[Environment variables](https://wiki.hypr.land/Configuring/Environment-variables/ "Environment variables")

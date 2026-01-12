@@ -1,10 +1,14 @@
 ---
-url: https://wiki.hypr.land/Hypr-Ecosystem/hyprpolkitagent
+url: https://wiki.hypr.land/Hypr-Ecosystem/hyprpolkitagent/
 title: hyprpolkitagent – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
 # hyprpolkitagent – Hyprland Wiki
+
+[Hypr Ecosystem](https://wiki.hypr.land/Hypr-Ecosystem/)
+
+hyprpolkitagent
 
 # hyprpolkitagent
 
@@ -28,3 +32,7 @@ necessary to use
 Other possible paths include
 `/usr/lib/hyprpolkitagent` and
 `/usr/libexec/hyprpolkitagent`.
+
+Last updated on January 8, 2026
+
+[hyprsunset](https://wiki.hypr.land/Hypr-Ecosystem/hyprsunset/ "hyprsunset")[hyprland-qt-support](https://wiki.hypr.land/Hypr-Ecosystem/hyprland-qt-support/ "hyprland-qt-support")

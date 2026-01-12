@@ -6,6 +6,8 @@ source_domain: wiki.hypr.land
 
 # FAQ – Hyprland Wiki
 
+FAQ
+
 # FAQ
 
 ### Symbol lookup errors
@@ -43,6 +45,8 @@ hyprlang
 hyprcursor
 aquamarine
 xdg-desktop-portal-hyprland
+hyprwire
+hyprtoolkit
 hyprland
 ```
 
@@ -513,3 +517,5 @@ The issue is likely the default monitor for X11 is not your desired primary moni
 Add `exec-once=xrandr --output [MONITOR_ID] --primary` to your config, replacing [MONITOR\_ID] with your main monitor’s ID (e.g. DP-3). You can find your monitor ID by running `hyprctl monitors`.
 
 By adding this to your hyprland config, it will set the default monitor for X11 applications to your main monitor.
+
+Last updated on January 8, 2026

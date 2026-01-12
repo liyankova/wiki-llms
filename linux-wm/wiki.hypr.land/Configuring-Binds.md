@@ -6,6 +6,10 @@ source_domain: wiki.hypr.land
 
 # Binds – Hyprland Wiki
 
+[Configuring](https://wiki.hypr.land/Configuring/)
+
+Binds
+
 # Binds
 
 ## Basic
@@ -499,3 +503,7 @@ bindl = , XF86AudioPlay, exec, playerctl play-pause
 bindl = , XF86AudioPrev, exec, playerctl previous
 bindl = , XF86AudioNext, exec, playerctl next
 ```
+
+Last updated on January 8, 2026
+
+[Monitors](https://wiki.hypr.land/Configuring/Monitors/ "Monitors")[Dispatchers](https://wiki.hypr.land/Configuring/Dispatchers/ "Dispatchers")

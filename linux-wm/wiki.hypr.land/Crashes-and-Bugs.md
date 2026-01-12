@@ -1,10 +1,12 @@
 ---
-url: https://wiki.hypr.land/Crashes-and-Bugs
+url: https://wiki.hypr.land/Crashes-and-Bugs/
 title: Crashes and Bugs – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
 # Crashes and Bugs – Hyprland Wiki
+
+Crashes and Bugs
 
 # Crashes and Bugs
 
@@ -175,3 +177,5 @@ echo 0 | sudo tee /sys/module/drm/parameters/debug # disables drm logging, don't
 ```
 
 After this, *attach* the `dmesg.log` file.
+
+Last updated on January 8, 2026

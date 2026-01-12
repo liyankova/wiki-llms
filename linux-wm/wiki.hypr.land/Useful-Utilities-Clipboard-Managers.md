@@ -1,10 +1,14 @@
 ---
-url: https://wiki.hypr.land/Useful-Utilities/Clipboard-Managers
+url: https://wiki.hypr.land/Useful-Utilities/Clipboard-Managers/
 title: Clipboard Managers – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
 # Clipboard Managers – Hyprland Wiki
+
+[Useful Utilities](https://wiki.hypr.land/Useful-Utilities/)
+
+Clipboard Managers
 
 # Clipboard Managers
 
@@ -188,3 +192,7 @@ Can also be applied to the primary selection (i.e. middle click to paste selecti
 ```
 exec-once = wl-clip-persist --clipboard primary
 ```
+
+Last updated on January 8, 2026
+
+[Color pickers](https://wiki.hypr.land/Useful-Utilities/Color-Pickers/ "Color pickers")[File Managers](https://wiki.hypr.land/Useful-Utilities/File-Managers/ "File Managers")

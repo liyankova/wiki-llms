@@ -1,10 +1,14 @@
 ---
-url: https://wiki.hypr.land/Configuring/Multi-GPU
+url: https://wiki.hypr.land/Configuring/Multi-GPU/
 title: Multi-GPU – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
 # Multi-GPU – Hyprland Wiki
+
+[Configuring](https://wiki.hypr.land/Configuring/)
+
+Multi-GPU
 
 # Multi-GPU
 
@@ -135,3 +139,7 @@ Now it is possible to use the new symlink in the `AQ_DRM_DEVICES` environment va
 ```
 env = AQ_DRM_DEVICES, /dev/dri/amd-igpu
 ```
+
+Last updated on January 8, 2026
+
+[Environment variables](https://wiki.hypr.land/Configuring/Environment-variables/ "Environment variables")[Uncommon tips & tricks](https://wiki.hypr.land/Configuring/Uncommon-tips--tricks/ "Uncommon tips & tricks")

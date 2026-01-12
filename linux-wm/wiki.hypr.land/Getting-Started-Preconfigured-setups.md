@@ -1,10 +1,14 @@
 ---
-url: https://wiki.hypr.land/Getting-Started/Preconfigured-setups
+url: https://wiki.hypr.land/Getting-Started/Preconfigured-setups/
 title: Preconfigured setups – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
 # Preconfigured setups – Hyprland Wiki
+
+[Getting Started](https://wiki.hypr.land/Getting-Started/)
+
+Preconfigured setups
 
 # Preconfigured setups
 
@@ -65,3 +69,7 @@ An opinionated Arch + Hyprland Setup by DHH.
 [Website](https://omarchy.org/)
 
 ![Image of Omarchy](https://i.ytimg.com/vi/Cft6mZDzIng/maxresdefault.jpg)
+
+Last updated on January 8, 2026
+
+[Master tutorial](https://wiki.hypr.land/Getting-Started/Master-Tutorial/ "Master tutorial")

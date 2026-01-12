@@ -1,10 +1,14 @@
 ---
-url: https://wiki.hypr.land/Useful-Utilities/Screen-Sharing
+url: https://wiki.hypr.land/Useful-Utilities/Screen-Sharing/
 title: Screen sharing – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
 # Screen sharing – Hyprland Wiki
+
+[Useful Utilities](https://wiki.hypr.land/Useful-Utilities/)
+
+Screen sharing
 
 # Screen sharing
 
@@ -55,3 +59,7 @@ windowrule {
     opacity = 0.0
 }
 ```
+
+Last updated on January 8, 2026
+
+[Wallpapers](https://wiki.hypr.land/Useful-Utilities/Wallpapers/ "Wallpapers")[App launchers](https://wiki.hypr.land/Useful-Utilities/App-Launchers/ "App launchers")

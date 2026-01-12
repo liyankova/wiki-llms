@@ -1,10 +1,12 @@
 ---
-url: https://wiki.hypr.land/Useful-Utilities
+url: https://wiki.hypr.land/Useful-Utilities/
 title: Useful Utilities – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
 # Useful Utilities – Hyprland Wiki
+
+Useful Utilities
 
 # Useful Utilities
 
@@ -13,16 +15,18 @@ Hyprland working.
 
 ## List of Pages
 
-* **[Must-Have](https://wiki.hypr.land/Must-have)**
-* **[Hypr Ecosystem](https://wiki.hypr.land/Hypr-Ecosystem)**
-* **[Status Bars](https://wiki.hypr.land/Status-Bars)**
-* **[App Launchers](https://wiki.hypr.land/App-Launchers)**
-* **[Wallpapers](https://wiki.hypr.land/Wallpapers)**
-* **[Screen Sharing](https://wiki.hypr.land/Screen-Sharing)**
-* **[App Clients](https://wiki.hypr.land/App-Clients)**
-* **[Color Pickers](https://wiki.hypr.land/Color-Pickers)**
-* **[Clipboard Managers](https://wiki.hypr.land/Clipboard-Managers)**
+* **[Must-Have](https://wiki.hypr.land/Useful-Utilities/Must-have)**
+* **[Hypr Ecosystem](https://wiki.hypr.land/Useful-Utilities/Hypr-Ecosystem)**
+* **[Status Bars](https://wiki.hypr.land/Useful-Utilities/Status-Bars)**
+* **[App Launchers](https://wiki.hypr.land/Useful-Utilities/App-Launchers)**
+* **[Wallpapers](https://wiki.hypr.land/Useful-Utilities/Wallpapers)**
+* **[Screen Sharing](https://wiki.hypr.land/Useful-Utilities/Screen-Sharing)**
+* **[App Clients](https://wiki.hypr.land/Useful-Utilities/App-Clients)**
+* **[Color Pickers](https://wiki.hypr.land/Useful-Utilities/Color-Pickers)**
+* **[Clipboard Managers](https://wiki.hypr.land/Useful-Utilities/Clipboard-Managers)**
 * **[Hyprland Desktop Portal](https://wiki.hypr.land/Hypr-Ecosystem/xdg-desktop-portal-hyprland)**
-* **[File Managers](https://wiki.hypr.land/File-Managers)**
-* **[Other](https://wiki.hypr.land/Other)**
-* **[Systemd startup](https://wiki.hypr.land/Systemd-start)**
+* **[File Managers](https://wiki.hypr.land/Useful-Utilities/File-Managers)**
+* **[Other](https://wiki.hypr.land/Useful-Utilities/Other)**
+* **[Systemd startup](https://wiki.hypr.land/Useful-Utilities/Systemd-start)**
+
+Last updated on January 8, 2026

@@ -1,10 +1,14 @@
 ---
-url: https://wiki.hypr.land/Nix/Cachix
+url: https://wiki.hypr.land/Nix/Cachix/
 title: Cachix – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
 # Cachix – Hyprland Wiki
+
+[Nix](https://wiki.hypr.land/Nix/)
+
+Cachix
 
 # Cachix
 
@@ -46,3 +50,7 @@ Do **not** override Hyprland’s `nixpkgs` input
 unless you know what you are doing.  
 Doing so will render the cache useless, since you’re building from a different
 Nixpkgs commit.
+
+Last updated on January 8, 2026
+
+[Hyprland on Home Manager](https://wiki.hypr.land/Nix/Hyprland-on-Home-Manager/ "Hyprland on Home Manager")[Hyprland on Other Distros](https://wiki.hypr.land/Nix/Hyprland-on-other-distros/ "Hyprland on Other Distros")

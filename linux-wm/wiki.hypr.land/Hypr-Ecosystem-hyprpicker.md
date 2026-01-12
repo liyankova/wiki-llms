@@ -1,10 +1,14 @@
 ---
-url: https://wiki.hypr.land/Hypr-Ecosystem/hyprpicker
+url: https://wiki.hypr.land/Hypr-Ecosystem/hyprpicker/
 title: hyprpicker – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
 # hyprpicker – Hyprland Wiki
+
+[Hypr Ecosystem](https://wiki.hypr.land/Hypr-Ecosystem/)
+
+hyprpicker
 
 # hyprpicker
 
@@ -28,3 +32,7 @@ Doesn’t require configuration, only launch flags:
 | `-d` | `--disable-hex-preview` | Disable live preview of Hex code | none |
 | `-l` | `--lowercase-hex` | Outputs the hexcode in lowercase | none |
 | `-V` | `--version` | Print version info | none |
+
+Last updated on January 8, 2026
+
+[hyprpaper](https://wiki.hypr.land/Hypr-Ecosystem/hyprpaper/ "hyprpaper")[hyprlauncher](https://wiki.hypr.land/Hypr-Ecosystem/hyprlauncher/ "hyprlauncher")

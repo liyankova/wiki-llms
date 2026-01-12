@@ -1,12 +1,14 @@
 ---
-url: https://wiki.hypr.land/Nvidia
-title: NVidia – Hyprland Wiki
+url: https://wiki.hypr.land/Nvidia/
+title: Nvidia – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
-# NVidia – Hyprland Wiki
+# Nvidia – Hyprland Wiki
 
-# NVidia
+Nvidia
+
+# Nvidia
 
 ## Foreword
 
@@ -298,3 +300,5 @@ worth trying the fully proprietary one.
 If you’re still having issues after following this guide, you can join the
 [Hyprland Discord](https://discord.gg/hQ9XvMUjjr) and ask for help in the
 `#hyprland-nvidia` channel.
+
+Last updated on January 8, 2026

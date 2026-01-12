@@ -6,6 +6,10 @@ source_domain: wiki.hypr.land
 
 # Performance – Hyprland Wiki
 
+[Configuring](https://wiki.hypr.land/Configuring/)
+
+Performance
+
 # Performance
 
 This page documents known tricks and fixes to boost performance if by any chance
@@ -38,3 +42,7 @@ case, remove it completely.
 ## My games work poorly, especially proton ones
 
 Using `gamescope` tends to fix any and all issues with Wayland/Hyprland.
+
+Last updated on January 8, 2026
+
+[Example configurations](https://wiki.hypr.land/Configuring/Example-configurations/ "Example configurations")

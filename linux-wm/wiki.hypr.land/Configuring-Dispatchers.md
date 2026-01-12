@@ -1,10 +1,14 @@
 ---
-url: https://wiki.hypr.land/Configuring/Dispatchers
+url: https://wiki.hypr.land/Configuring/Dispatchers/
 title: Dispatchers – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
 # Dispatchers – Hyprland Wiki
+
+[Configuring](https://wiki.hypr.land/Configuring/)
+
+Dispatchers
 
 # Dispatchers
 
@@ -16,7 +20,7 @@ layout pages (See the sidebar).
 | Param type | Description |
 | --- | --- |
 | window | a window. Any of the following: class regex (by default, optionally `class:`), `initialclass:` initial class regex, `title:` title regex, `initialtitle` initial title regex, `tag:` window tag regex, `pid:` the pid, `address:` the address, `activewindow` an active window, `floating` the first floating window on the current workspace, `tiled` the first tiled window on the current workspace |
-| workspace | see [below](https://wiki.hypr.land/Configuring/Dispatchers#workspaces). |
+| workspace | see [below](https://wiki.hypr.land/Configuring/Dispatchers/#workspaces). |
 | direction | `l` `r` `u` `d` left right up down |
 | monitor | One of: direction, ID, name, `current`, relative (e.g. `+1` or `-1`) |
 | resizeparams | relative pixel delta vec2 (e.g. `10 -10`), optionally a percentage of the window size (e.g. `20 25%`) or `exact` followed by an exact vec2 (e.g. `exact 1280 720`), optionally a percentage of the screen size (e.g. `exact 50% 50%`) |
@@ -29,7 +33,7 @@ layout pages (See the sidebar).
 
 | Dispatcher | Description | Params |
 | --- | --- | --- |
-| exec | executes a shell command | command (supports rules, see [below](https://wiki.hypr.land/Configuring/Dispatchers#executing-with-rules)) |
+| exec | executes a shell command | command (supports rules, see [below](https://wiki.hypr.land/Configuring/Dispatchers/#executing-with-rules)) |
 | execr | executes a raw shell command (does not support rules) | command |
 | pass | passes the key (with mods) to a specified window. Can be used as a workaround to global keybinds not working on Wayland. | window |
 | sendshortcut | sends specified keys (with mods) to an optionally specified window. Can be used like pass | mod, key[, window] |
@@ -68,7 +72,7 @@ layout pages (See the sidebar).
 | movecursortocorner | moves the cursor to the corner of the active window | direction, 0 - 3, bottom left - 0, bottom right - 1, top right - 2, top left - 3 |
 | movecursor | moves the cursor to a specified position | `x y` |
 | renameworkspace | rename a workspace | `id name`, e.g. `2 work` |
-| exit | exits the compositor with no questions asked. | none |
+| exit | exits the compositor with no questions asked. It’s recommended to use `hyprshutdown` instead of this. | none |
 | forcerendererreload | forces the renderer to reload all resources and outputs | none |
 | movecurrentworkspacetomonitor | Moves the active workspace to a monitor | monitor |
 | focusworkspaceoncurrentmonitor | Focuses the requested workspace on the current monitor, swapping the current workspace to a different monitor if necessary. If you want XMonad/Qtile-style workspace switching, replace `workspace` in your config with this. | workspace |
@@ -89,8 +93,8 @@ layout pages (See the sidebar).
 | movegroupwindow | Swaps the active window with the next or previous in a group | `b` for back, anything else for forward |
 | denywindowfromgroup | Prohibit the active window from becoming or being inserted into group | `on`, `off` or, `toggle` |
 | setignoregrouplock | Temporarily enable or disable binds:ignore\_group\_lock | `on`, `off`, or `toggle` |
-| global | Executes a Global Shortcut using the GlobalShortcuts portal. See [here](https://wiki.hypr.land/Binds/#global-keybinds) | name |
-| submap | Change the current mapping group. See [Submaps](https://wiki.hypr.land/Binds/#submaps) | `reset` or name |
+| global | Executes a Global Shortcut using the GlobalShortcuts portal. See [here](https://wiki.hypr.land/Configuring/Binds/#global-keybinds) | name |
+| submap | Change the current mapping group. See [Submaps](https://wiki.hypr.land/Configuring/Binds/#submaps) | `reset` or name |
 | event | Emits a custom event to socket2 in the form of `custom>>yourdata` | the data to send |
 | setprop | Sets a window property | `window property value` |
 | toggleswallow | If a window is swallowed by the focused window, unswallows it. Execute again to swallow it back | none |
@@ -202,7 +206,7 @@ bind = SUPER, E, exec, [workspace 2 silent; float; move 0 0] kitty
 
 ### setprop
 
-Props are any of the *dynamic effects* of [Window Rules](https://wiki.hypr.land/Window-Rules#dynamic-effects).
+Props are any of the *dynamic effects* of [Window Rules](https://wiki.hypr.land/Configuring/Window-Rules#dynamic-effects).
 
 For example:
 
@@ -240,3 +244,7 @@ For example:
 This can be used to prevent Chromium-based browsers from going into presentation mode when they detect they have been fullscreened.
 
 `fullscreenstate 0 2` Keeps the window non-fullscreen, but the client goes into fullscreen mode within the window.
+
+Last updated on January 8, 2026
+
+[Binds](https://wiki.hypr.land/Configuring/Binds/ "Binds")[Window Rules](https://wiki.hypr.land/Configuring/Window-Rules/ "Window Rules")

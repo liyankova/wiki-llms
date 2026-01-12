@@ -1,17 +1,21 @@
 ---
-url: https://wiki.hypr.land/Useful-Utilities/App-Launchers
+url: https://wiki.hypr.land/Useful-Utilities/App-Launchers/
 title: App launchers – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
 # App launchers – Hyprland Wiki
 
+[Useful Utilities](https://wiki.hypr.land/Useful-Utilities/)
+
+App launchers
+
 # App launchers
 
 ## Hyprlauncher
 
 Hyprlauncher is a first-party multipurpose and versatile launcher / picker for Hyprland.
-[GitHub](https://github.com/hyprwm/hyprlauncher)
+See its usage and config [here](https://wiki.hypr.land/Hypr-Ecosystem/hyprlauncher).
 
 ## Wofi
 
@@ -26,6 +30,12 @@ Rofi, a window switcher, application launcher and `dmenu` replacement. supports 
 
 bemenu is a Wayland-native replacement for dmenu.
 [GitHub](https://github.com/Cloudef/bemenu).
+
+## HyprTile
+
+HyprTile is a Mega-Launcher for Hyprland. Tiny in size, easy to use with nifty features like app grid, very flexible per app configuration, integrated music search, notes system, screenshot and screenrecording for full screen or selected area, system monitor, volume control, starfield background and very nice optics. A ton of features still to come. Everything so simple, you don’t need a man page.
+
+[HyprTile](https://hyprtile.org/).
 
 ## fuzzel
 
@@ -62,5 +72,16 @@ Walker is an extensible Wayland-native runner with various built-in modules
 be run as a service for faster startups.
 [GitHub](https://github.com/abenz1267/walker)
 
+## Vicinae
+
+Vicinae is a C++ and Qt native launcher with a focus on wayland. Comes with many
+built-in modules. It runs as a server in background. It supports raycast extensions
+via a compatibility layer.
+[GitHub](https://github.com/vicinaehq/vicinae)
+
 For a more comprehensive list of launchers, check
 [awesome-hyprland](https://github.com/hyprland-community/awesome-hyprland#runners-menus-and-application-launchers).
+
+Last updated on January 8, 2026
+
+[Screen sharing](https://wiki.hypr.land/Useful-Utilities/Screen-Sharing/ "Screen sharing")[App clients](https://wiki.hypr.land/Useful-Utilities/App-Clients/ "App clients")

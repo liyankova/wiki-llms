@@ -1,10 +1,14 @@
 ---
-url: https://wiki.hypr.land/Useful-Utilities/Must-have
+url: https://wiki.hypr.land/Useful-Utilities/Must-have/
 title: Must have – Hyprland Wiki
 source_domain: wiki.hypr.land
 ---
 
 # Must have – Hyprland Wiki
+
+[Useful Utilities](https://wiki.hypr.land/Useful-Utilities/)
+
+Must have
 
 # Must have
 
@@ -34,7 +38,7 @@ Install `pipewire` and `wireplumber` (**not** `pipewire-media-session`).
 #### Non-systemd distros
 
 Since there is no truly standardized way (outside of systemd) to load PipeWire
-when starting a graphical shell,[1](https://wiki.hypr.land/Useful-Utilities/Must-have#fn:1) non-systemd distros like Gentoo or Artix
+when starting a graphical shell,[1](https://wiki.hypr.land/Useful-Utilities/Must-have/#fn:1) non-systemd distros like Gentoo or Artix
 provide a dedicated launcher.
 
 It can be usually found by running `whereis <distro>-pipewire-launcher`. If such
@@ -75,4 +79,8 @@ For icons to display correctly, installing a Nerd Font or FontAwesome is recomme
 
 ---
 
-1. <https://wiki.gentoo.org/wiki/PipeWire#OpenRC> [↩︎](https://wiki.hypr.land/Useful-Utilities/Must-have#fnref:1)
+1. <https://wiki.gentoo.org/wiki/PipeWire#OpenRC> [↩︎](https://wiki.hypr.land/Useful-Utilities/Must-have/#fnref:1)
+
+Last updated on January 8, 2026
+
+[Status bars](https://wiki.hypr.land/Useful-Utilities/Status-Bars/ "Status bars")
