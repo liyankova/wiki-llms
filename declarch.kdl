@@ -1,0 +1,6 @@
+packages {
+  test
+  aur {
+    test2
+  }
+}
